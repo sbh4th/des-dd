@@ -1,0 +1,58 @@
+/*-- scss:defaults --*/
+
+// fonts
+$font-family-sans-serif: "Lucida Sans", serif !default;
+
+$theme-blue: #0000ff;
+$theme-red: #ff0000;
+$theme-gray: #cccccc;
+$theme-white: #ffffff;
+
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+
+$font-family: 'Allura', cursive;
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
+
+//$font-family-sans-serif: 'Libre Caslon Text', serif;
+
+//$mainFont: 'Libre Caslon Text', serif;
+
+/*-- scss:rules --*/
+
+.blue {
+  color: $theme-blue;
+}
+
+.red {
+  color: $theme-red;
+}
+
+.gray {
+  color: $theme-gray;
+}
+
+.white {
+  color: $theme-white;
+}
+
+.act {
+  font-family: Allura;
+  font-size: 300%;
+  color: $theme-white;
+}
+
+/* alignment */
+
+.h2center h2 {
+  text-align: center;
+}
+
+.center body {
+  text-align: center;
+}
+
+/* color */
+.reveal h2 {
+  color: #1a78c2;
+}

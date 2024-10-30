@@ -1,0 +1,37 @@
+\documentclass[
+%% TIKZ_CLASSOPTION %%
+tikz
+]{standalone}
+\usepackage{amsmath}
+\usetikzlibrary{matrix}
+%% EXTRA_TIKZ_PREAMBLE_CODE %%
+\begin{document}
+%% TIKZ_CODE %%
+\begin{tikzpicture}[scale=2]
+    
+	% Draw axes
+    \draw [<->,thick] (0,3) node (yaxis) [above] {$y$} |- (4,0) node (xaxis) [right] {$time$};
+	\draw[thick, color=black, dashed] (2,0) coordinate (t0_0) -- (2,3) coordinate (t0_1);
+	
+	% Legend
+	\coordinate (T) at (4.5,2.1);
+    \fill[red] (T) circle (1pt) node[right, color=black] {Treated};
+	\coordinate (C) at (4.5,1.8);
+    \fill[blue] (C) circle (1pt) node[right, color=black] {Control};
+	
+	% Intervention line
+	\draw[thick, -> ] (2.6,2.9) coordinate (t0_0) node[right] {Intervention} -- (2.1,2.9) coordinate (t0_1);
+
+	% Data points
+	\coordinate (o1) at (1.5,1.5);
+	\fill[red] (o1) circle (1.5pt);
+	\coordinate (o2) at (2.5,2);
+	\fill[red] (o2) circle (1.5pt);
+
+	\draw[thick,color=red,-] (o1) -- (o2);
+	\coordinate (c1) at (2.5,1.5);
+	\fill[red] (c1) circle (1.5pt);
+	\draw[thick,color=red,dashed,-] (o1) -- (c1) node[right, align=left] {Counterfactual trend based \\ on extrapolation};
+	
+\end
+\end{document}

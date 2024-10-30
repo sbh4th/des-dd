@@ -1,0 +1,381 @@
+---
+title: "Difference-in-Differences for Social Epidemiology"
+subtitle: "Danish Epidemiology Society Workshop"
+author: "Sam Harper"
+date: 2024-11-06
+date-format: iso
+format: 
+  revealjs:
+    theme: [default, custom.scss]
+    width: 1600
+    height: 900
+    slide-number: true
+    html-math-method: mathjax
+    # embed-resources: true
+title-slide-attributes:
+    data-background-image: "/images/mcgill-epi-logo.png"
+    data-background-size: 30%
+    data-background-position: 50% 90%
+bibliography: des.bib
+csl: elsevier-harvard-without-titles.csl
+filters:
+  - parse-latex
+  - diagram
+metadata:
+  engine:
+    # Use LuaLaTeX to compile TikZ, define headers
+    tikz:
+      execpath: lualatex
+      additional-packages: |
+        \usepackage{adjustbox}
+        \usetikzlibrary{arrows, shapes}
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+library(here)
+library(tidyverse)
+library(pdftools)
+library(kableExtra)
+library(tinytable)
+```
+
+## Outline
+
+##  {.center}
+
+::: {#title-slide .center}
+### "Methods to study social inequality in health"
+:::
+
+## Title
+
+-   Normal slide text.
+-   *Italic text*
+-   **Bold text**
+
+## Conference theme
+
+::::: columns
+::: {.column width="50%"}
+-   4600 families in high poverty randomized to housing vouchers.
+
+-   Generated large differences in exposure to high-poverty neighborhoods.
+
+-   Many limitations.
+:::
+
+::: {.column width="50%"}
+*Methods to study social inequality in health*
+
+![](images/des-logo.png)
+:::
+:::::
+
+## Example slide
+
+::::: columns
+::: {.column .incremental width="50%"}
+-   Eat spaghetti
+-   Drink wine
+:::
+
+::: {.column width="50%"}
+-   Drink coffee
+-   Eat a hamburger
+:::
+:::::
+
+## Thinking about research design
+
+::::: columns
+::: {.column width="30%"}
+```{r, engine = 'tikz', echo=FALSE, out.width="80%"}
+\begin{tikzpicture}[transform shape]
+\tikzset{> = stealth}
+    \node (z) at (0,0.5) {$Z$};
+    \node (t) at (0,0) {$T$};
+    \node (y) at (1,0) {$Y$};
+    \node (u) at (0.5, -1) {$U$};
+    \path[->] (t) edge (y);
+    \path[->] (u) edge (t);
+    \path[->] (u) edge (y);
+\end{tikzpicture}
+```
+:::
+
+::: {.column width="70%"}
+Without randomization $(Z)$, we focus on exploiting:
+
+  - Treated group with **change** in exposure.
+  - Comparison group without change.
+
+Recall the potential outcomes framework. We need a substitute population (treated and controls):
+
+$$E[Y^{1}-Y^{0}]=E[Y^{1}|T=1]-E[Y^{0}|T=0]$$
+
+-   Where should we get our counterfactual?
+:::
+:::::
+
+## One-group posttest design with control group
+
+```{tikz dd1, echo=F, out.width="75%", cache=TRUE, fig.align = "center"}
+\begin{tikzpicture}[scale=2]
+    \draw [<->,thick] (0,3) node (yaxis) [above] {$y$} |- (4,0) node (xaxis) [right] {$time$};
+	\draw[thick, color=black, dashed] (2,0) coordinate (t0_0) -- (2,3) coordinate (t0_1);
+	\coordinate (T) at (4.5,2.1);
+    \fill[red] (T) circle (1pt) node[right, color=black] {Treated};
+	\coordinate (C) at (4.5,1.8);
+    \fill[blue] (C) circle (1pt) node[right, color=black] {Control};
+	
+	\draw[thick, -> ] (2.6,2.9) coordinate (t0_0) node[right] {Intervention} -- (2.1,2.9) coordinate (t0_1);
+
+	\coordinate (o1) at (2.5,1.5);
+	\fill[blue] (o1) circle (1.5pt);
+	\coordinate (o2) at (2.5,2);
+	\fill[red] (o2) circle (1.5pt);
+	\fill[blue] (o1) circle (1.5pt) node[right] {Is this really a good substitute?};
+	
+\end{tikzpicture}
+```
+
+## One-group pretest-posttest design
+
+```{r, engine = 'tikz', out.width="75%", fig.align = "center"}
+
+\begin{tikzpicture}[scale=2]
+    
+	% Draw axes
+    \draw [<->,thick] (0,3) node (yaxis) [above] {$y$} |- (4,0) node (xaxis) [right] {$time$};
+	\draw[thick, color=black, dashed] (2,0) coordinate (t0_0) -- (2,3) coordinate (t0_1);
+	
+	% Legend
+	\coordinate (T) at (4.5,2.1);
+    \fill[red] (T) circle (1pt) node[right, color=black] {Treated};
+	\coordinate (C) at (4.5,1.8);
+    \fill[blue] (C) circle (1pt) node[right, color=black] {Control};
+	
+	% Intervention line
+	\draw[thick, -> ] (2.6,2.9) coordinate (t0_0) node[right] {Intervention} -- (2.1,2.9) coordinate (t0_1);
+
+	% Data points
+	\coordinate (o1) at (1.5,1.5);
+	\fill[red] (o1) circle (1.5pt);
+	\coordinate (o2) at (2.5,2);
+	\fill[red] (o2) circle (1.5pt);
+
+	\draw[thick,color=red,-] (o1) -- (o2);
+	\coordinate (c1) at (2.5,1.5);
+	\fill[red] (c1) circle (1.5pt);
+	\draw[thick,color=red,dashed,-] (o1) -- (c1) node[right, align=left] {Counterfactual trend based \\ on extrapolation};
+	
+\end{tikzpicture}
+```
+
+## One-group pretest-posttest design
+
+- Even a single pretest observation provides some improvement over the
+    posttest only design.
+
+-   Now we derive a counterfactual prediction from the same group before
+    the intervention.
+
+-   Provides weak counterfactual evidence about what would have happened
+    in the absence of the program.
+
+    -   We know that $Y_{t-1}$ occurs before $Y_{t}$ (correct temporal
+        ordering).
+
+    -   Could be many other reasons apart from the intervention that
+        $Y_{t}\neq Y_{t-1}$.
+
+-   Stronger evidence if the outcomes can be reliably predicted and the
+    pre-post interval is short.
+
+-   Better still to add a pretest and posttest from a control group.
+
+## Adding pretests for both groups
+
+```{tikz dd3, echo=F, out.width="75%", cache=TRUE, fig.align="center"}
+\begin{tikzpicture}[scale=2]
+    
+	% Draw axes
+    \draw [<->,thick] (0,3) node (yaxis) [above] {$y$} |- (4,0) node (xaxis) [right] {$time$};
+	\draw[thick, color=black, dashed] (2,0) coordinate (t0_0) -- (2,3) coordinate (t0_1);
+	
+	% Legend
+	\coordinate (T) at (4.5,2.1);
+    \fill[red] (T) circle (1pt) node[right, color=black] {Treated};
+	\coordinate (C) at (4.5,1.8);
+    \fill[blue] (C) circle (1pt) node[right, color=black] {Control};
+	
+	% Intervention line
+	\draw[thick, -> ] (2.6,2.9) coordinate (t0_0) node[right] {Intervention} -- (2.1,2.9) coordinate (t0_1);
+
+	% Data points
+	\coordinate (c0) at (1.5,1.5);
+	\fill[blue] (c0) circle (1.5pt);
+	\coordinate (t0) at (1.5,1.7);
+	\fill[red] (t0) circle (1.5pt);
+	\coordinate (c1) at (2.5,1.5);
+	\fill[blue] (c1) circle (1.5pt);
+	\coordinate (t1) at (2.5,2);
+	\fill[red] (t1) circle (1.5pt);
+
+	\draw[thick,color=blue,-] (c0) -- (c1) node[right, align=left] {Control group estimates \\ counterfactual trend};
+	\draw[thick,color=red,-] (t0) -- (t1);
+	
+\end{tikzpicture}
+```
+
+## How does this help?
+
+-   Pre/post in control helps resolve this by differencing out any
+    **time-invariant** characteristics of both groups.
+
+    -   Many observed factors don't change over the course of an
+        intervention (e.g., geography, parents' social class, birth
+        cohort).
+
+    -   Any time-invariant *unobserved* factors also won't change over
+        intervention period.
+
+    -   We can therefore effectively control for them.
+
+-   Measuring same units before and after a program cancels out any
+    effect of all of the characteristics that are unique to that
+    observation and that do not change over time.
+
+-   This also has the benefit of canceling out (or controlling for)
+    unobserved time-invariant characteristics.
+    
+## 
+:::: columns
+::: {.column width="20%"}
+### The need for a control group
+:::
+
+::: {.column width="80%"}
+```{r, echo=F, out.width="250%"}
+knitr::include_graphics(here("images", "ddfig1.png"))
+```
+:::
+::::
+
+## The need for a control group
+```{r, echo=F, fig.align="center"}
+knitr::include_graphics(here("images", "ddfig1.png"))
+```
+
+## What if there were no intervention?
+```{r, echo=F, fig.align="center"}
+knitr::include_graphics(here("images", "ddfig2.png"))
+```
+
+## What if there were no intervention?
+```{r, echo=F, fig.align="center"}
+knitr::include_graphics(here("images", "ddfig3.png"))
+```
+
+## What if there were no intervention?
+```{r, echo=F, fig.align="center"}
+knitr::include_graphics(here("images", "ddfig4.png"))
+```
+
+## What if things worsened over time?
+```{r, echo=F, fig.align="center"}
+knitr::include_graphics(here("images", "ddfig5.png"))
+```
+
+## What if things worsened over time?
+```{r, echo=F, fig.align="center"}
+knitr::include_graphics(here("images", "ddfig6.png"))
+```
+
+## More time periods make better evaluations
+```{r, echo=F, fig.align="center"}
+knitr::include_graphics(here("images", "ddfig7.png"))
+```
+
+## Parallel pre-trends increase "exchangeability"
+```{r, echo=F, fig.align="center"}
+knitr::include_graphics(here("images", "ddfig8.png"))
+```
+
+##
+:::: columns
+::: {.column width="25%"}
+### Classic epidemiology example: Water and cholera
+:::
+
+::: {.column width="75%"}
+```{r, echo=F, fig.align = "center", out.width="80%"}
+knitr::include_graphics(here("images", "snow-map.png"))
+```
+:::
+::::
+
+::: aside
+See Snow (1855) reprinted as @snow1936
+:::
+
+## Snow's method
+
+:::: columns
+::: {.column width="50%"}
+- Couldn't randomize.
+
+- Knew Lambeth required to move intake upstream of London *after* 1849.
+
+- SV did not move, and communities were similar in many ways.
+
+- Used SV as an 'unaffected' control community.
+
+- Did not estimate DD parameter, but idea was there.
+:::
+
+::: {.column width="50%"}
+```{r, echo=F}
+d <- data.frame(
+  r = c("Lambeth (treated)", 
+        "Southwark + Vauxhall (control)", "Group Diff (treat - control)"),
+  t0 = c("130.1", "134.9", "-4.8"),
+  t1 = c("84.9", "146.6", "-61.7"),
+  td = c("-45.2", "11.7", "-56.9"))
+
+colnames(d) <- c("Region", "Rate (1849)", "Rate (1854)", "Post-Pre")
+tt(d) |> theme_tt("striped")
+```
+:::
+::::
+
+## Why is Snow's work compelling?
+
+:::: columns
+::: {.column width="25%"}
+```{r, echo=F}
+knitr::include_graphics(here("images", "john-snow.jpg"))
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="70%"}
+
+- Evidence of pre-treatment equivalence between groups:
+
+> "In many cases a single house has a supply different from that on either side. Each company supplies both rich and poor, both large houses and small; there is no difference either in the condition or occupation of the persons receiving the water of the different companies..."
+
+- No knowledge of mechanisms or intervention:
+
+>"divided into two groups without their choice, and, in most cases, without their knowledge"
+:::
+
+::::
+
+:::aside
+See Snow (1855) reprinted as @snow1936 and also @freedman1991
+:::
+
+## References
