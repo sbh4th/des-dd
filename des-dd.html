@@ -341,6 +341,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="des-dd_files/libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="des-dd_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -543,104 +546,51 @@ Sam Harper
 <section id="snows-method" class="slide level2">
 <h2>Snow’s method</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:40%;">
 <ul>
 <li><p>Couldn’t randomize.</p></li>
-<li><p>Knew Lambeth required to move intake upstream of London <em>after</em> 1849.</p></li>
-<li><p>SV did not move, and communities were similar in many ways.</p></li>
-<li><p>Used SV as an ‘unaffected’ control community.</p></li>
+<li><p>Knew L required to move intake upstream of London <em>after</em> 1849.</p></li>
+<li><p>SV similar to L, but did not move.</p></li>
+<li><p>SV as ‘unaffected’ control.</p></li>
 <li><p>Did not estimate DD parameter, but idea was there.</p></li>
 </ul>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:55%;">
 <div class="cell">
 <div class="cell-output-display">
-<!-- preamble start -->
+<table class="lightable-minimal lightable-striped lightable-hover caption-top" data-quarto-postprocess="true" style="font-family: Lucida Sans; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Region</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Rate (1849)</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Rate (1854)</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Post-Pre</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Lambeth (treated)</td>
+<td style="text-align: left;">130.1</td>
+<td style="text-align: left;">84.9</td>
+<td style="text-align: left;">-45.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Southwark + Vauxhall (control)</td>
+<td style="text-align: left;">134.9</td>
+<td style="text-align: left;">146.6</td>
+<td style="text-align: left;">11.7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Group Diff (treat - control)</td>
+<td style="text-align: left;">-4.8</td>
+<td style="text-align: left;">-61.7</td>
+<td style="text-align: left;">-56.9</td>
+</tr>
+</tbody>
+</table>
 
-    <script>
-      function styleCell_hunai6ovvx3r6tm7mjbt(i, j, css_id) {
-        var table = document.getElementById("tinytable_hunai6ovvx3r6tm7mjbt");
-        table.rows[i].cells[j].classList.add(css_id);
-      }
-      function insertSpanRow(i, colspan, content) {
-        var table = document.getElementById('tinytable_hunai6ovvx3r6tm7mjbt');
-        var newRow = table.insertRow(i);
-        var newCell = newRow.insertCell(0);
-        newCell.setAttribute("colspan", colspan);
-        // newCell.innerText = content;
-        // this may be unsafe, but innerText does not interpret <br>
-        newCell.innerHTML = content;
-      }
-      function spanCell_hunai6ovvx3r6tm7mjbt(i, j, rowspan, colspan) {
-        var table = document.getElementById("tinytable_hunai6ovvx3r6tm7mjbt");
-        const targetRow = table.rows[i];
-        const targetCell = targetRow.cells[j];
-        for (let r = 0; r < rowspan; r++) {
-          // Only start deleting cells to the right for the first row (r == 0)
-          if (r === 0) {
-            // Delete cells to the right of the target cell in the first row
-            for (let c = colspan - 1; c > 0; c--) {
-              if (table.rows[i + r].cells[j + c]) {
-                table.rows[i + r].deleteCell(j + c);
-              }
-            }
-          }
-          // For rows below the first, delete starting from the target column
-          if (r > 0) {
-            for (let c = colspan - 1; c >= 0; c--) {
-              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
-                table.rows[i + r].deleteCell(j);
-              }
-            }
-          }
-        }
-        // Set rowspan and colspan of the target cell
-        targetCell.rowSpan = rowspan;
-        targetCell.colSpan = colspan;
-      }
-window.addEventListener('load', function () { styleCell_hunai6ovvx3r6tm7mjbt(0, 0, 'tinytable_css_idvmi86xawz257jly2i2rd') })
-window.addEventListener('load', function () { styleCell_hunai6ovvx3r6tm7mjbt(0, 1, 'tinytable_css_idvmi86xawz257jly2i2rd') })
-window.addEventListener('load', function () { styleCell_hunai6ovvx3r6tm7mjbt(0, 2, 'tinytable_css_idvmi86xawz257jly2i2rd') })
-window.addEventListener('load', function () { styleCell_hunai6ovvx3r6tm7mjbt(0, 3, 'tinytable_css_idvmi86xawz257jly2i2rd') })
-    </script>
 
-    <style>
-    .table td.tinytable_css_idvmi86xawz257jly2i2rd, .table th.tinytable_css_idvmi86xawz257jly2i2rd {  border-bottom: solid 0.1em #d3d8dc; }
-    </style>
-    <div class="container">
-      <table class="table table-borderless" id="tinytable_hunai6ovvx3r6tm7mjbt" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
-        <thead>
-        
-              <tr>
-                <th scope="col">Region</th>
-                <th scope="col">Rate (1849)</th>
-                <th scope="col">Rate (1854)</th>
-                <th scope="col">Post-Pre</th>
-              </tr>
-        </thead>
-        
-        <tbody>
-                <tr>
-                  <td>Lambeth (treated)             </td>
-                  <td>130.1</td>
-                  <td>84.9 </td>
-                  <td>-45.2</td>
-                </tr>
-                <tr>
-                  <td>Southwark + Vauxhall (control)</td>
-                  <td>134.9</td>
-                  <td>146.6</td>
-                  <td>11.7 </td>
-                </tr>
-                <tr>
-                  <td>Group Diff (treat - control)  </td>
-                  <td>-4.8 </td>
-                  <td>-61.7</td>
-                  <td>-56.9</td>
-                </tr>
-        </tbody>
-      </table>
-    </div>
-<!-- hack to avoid NA insertion in last line -->
 </div>
 </div>
 </div></div>
@@ -678,6 +628,240 @@ window.addEventListener('load', function () { styleCell_hunai6ovvx3r6tm7mjbt(0, 
 <aside><div>
 <p>See Snow (1855) reprinted as <span class="citation" data-cites="snow1936">Snow et al. (<a href="#/references" role="doc-biblioref" onclick="">1936</a>)</span> and also <span class="citation" data-cites="freedman1991">Freedman (<a href="#/references" role="doc-biblioref" onclick="">1991</a>)</span></p>
 </div></aside></section>
+<section id="difference-in-differences-basic-idea" class="slide level2">
+<h2>Difference-in-Differences: Basic Idea</h2>
+<div class="columns">
+<div class="column" style="width:20%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="des-dd_files/figure-revealjs/dd-1.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:80%;">
+<p>The simplest DD setting:</p>
+<ul>
+<li><p>Outcomes are observed for units observed in one of two groups:</p>
+<ul>
+<li>Treated</li>
+<li>Control</li>
+</ul></li>
+<li><p>Outcomes observed in one of two time periods.</p>
+<ul>
+<li>Before intervention</li>
+<li>After the intervention.</li>
+</ul></li>
+<li><p>Treated: only units in one of the two groups are exposed to a treatment, in the second time period.</p></li>
+<li><p>Control: Never observed to be exposed to the treatment.</p></li>
+</ul>
+</div></div>
+</section>
+<section id="difference-in-differences-basic-idea-1" class="slide level2">
+<h2>Difference-in-Differences: Basic Idea</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="images/gertler1.png" style="width:120.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:70%;">
+<ul>
+<li><p>The average change over time in the non-exposed (control) group is subtracted from the change over time in the exposed (treatment) group.</p></li>
+<li><p>Double differencing removes biases in second period comparisons between the treatment and control group that could result from:</p>
+<ul>
+<li>Fixed (i.e., non time-varying) differences between those groups.</li>
+<li>Comparisons over time in the treatment group that could be the result of time trends unrelated to the treatment.</li>
+</ul></li>
+</ul>
+</div></div>
+</section>
+<section id="key-assumption-parallel-trends" class="slide level2">
+<h2>Key Assumption: Parallel Trends</h2>
+<div class="columns">
+<div class="column" style="width:20%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="images/gertler-parallel.png" style="width:120.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:80%;">
+<ul>
+<li><p>Basic DD controls for any time invariant characteristics of both treated and control groups.</p></li>
+<li><p>Does not control for any <strong>time-varying</strong> characteristics.</p></li>
+<li><p>If another policy/intervention occurs in the treated (or control) group at the same time as the intervention, we cannot cleanly identify the effect of the program.</p></li>
+<li><p>DD main assumption: in the absence of the intervention treated and control groups would have displayed similar <strong>trends</strong>.</p></li>
+<li><p>This is called the <em>parallel trends</em> assumption.</p></li>
+</ul>
+</div></div>
+
+<aside><div>
+<p>Impossible to verify (see <span class="citation" data-cites="gertler2016">Gertler et al. (<a href="#/references" role="doc-biblioref" onclick="">2016</a>)</span>)</p>
+</div></aside></section>
+<section id="key-assumption-parallel-trends-1" class="slide level2">
+<h2>Key Assumption: Parallel Trends</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p>Basic DD controls for any time invariant characteristics of both treated and control groups.</p></li>
+<li><p>Does not control for any <strong>time-varying</strong> characteristics.</p></li>
+<li><p>If another policy/intervention occurs in the treated (or control) group at the same time as the intervention, we cannot cleanly identify the effect of the program.</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>DD main assumption: in the absence of the intervention treated and control groups would have displayed similar <strong>trends</strong>.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/gertler-parallel.png" class="quarto-figure quarto-figure-center" style="width:30.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><em>Parallel trends</em> assumption.</li>
+</ul>
+</div></div>
+
+<aside><div>
+<p>Impossible to verify (see <span class="citation" data-cites="gertler2016">Gertler et al. (<a href="#/references" role="doc-biblioref" onclick="">2016</a>)</span>)</p>
+</div></aside></section>
+<section id="difference-in-differences-without-regression" class="slide level2">
+<h2>Difference-in-Differences without Regression</h2>
+<p>DD is just differences in means! <br><br></p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p>Let <span class="math inline">\(\mu_{it}=E(Y_{it})\)</span></p>
+<ul>
+<li><p><span class="math inline">\(i=0\)</span> is control group, <span class="math inline">\(i=1\)</span> is treatment.</p></li>
+<li><p><span class="math inline">\(t=0\)</span> is pre-period, <span class="math inline">\(t=1\)</span> is post-period.</p></li>
+<li><p>One ‘difference’ estimate of causal effect is: <span class="math inline">\(\mu_{11}-\mu_{10}\)</span> (pre-post in treated)</p></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<ul>
+<li>Differences-in-Differences estimate of causal effect is: <span class="math inline">\((\mu_{11}-\mu_{10})-(\mu_{01}-\mu_{00})\)</span></li>
+</ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Area</th>
+<th>Before</th>
+<th>After</th>
+<th>Difference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Treated</td>
+<td>135</td>
+<td>100</td>
+<td>-35</td>
+</tr>
+<tr class="even">
+<td>Control</td>
+<td>80</td>
+<td>60</td>
+<td>-20</td>
+</tr>
+<tr class="odd">
+<td>T - C</td>
+<td>55</td>
+<td>40</td>
+<td>-15</td>
+</tr>
+</tbody>
+</table>
+</div></div>
+</section>
+<section id="dd-regression-two-groups-two-periods-2x2" class="slide level2">
+<h2>DD Regression: Two Groups, Two Periods (2x2)</h2>
+<div class="columns">
+<div class="column" style="width:20%;">
+<ul>
+<li><p>Single treated and control group, two periods</p></li>
+<li><p><span class="math inline">\(\beta_{1}\)</span> = Treated group</p></li>
+<li><p><span class="math inline">\(\beta_{2}\)</span> = Post period</p></li>
+<li><p><span class="math inline">\(\beta_{3}\)</span> = Product term</p></li>
+</ul>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:75%;">
+<table class="table table-striped caption-top">
+<thead>
+<tr class="header">
+<th>y</th>
+<th>group</th>
+<th>time</th>
+<th>treat?</th>
+<th>post?</th>
+<th>treatXpost</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\vdots\)</span></td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\vdots\)</span></td>
+<td>1</td>
+<td>2</td>
+<td>0</td>
+<td><span class="red">1</span></td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\vdots\)</span></td>
+<td>2</td>
+<td>1</td>
+<td><span class="blue">1</span></td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\vdots\)</span></td>
+<td>2</td>
+<td>2</td>
+<td><span class="blue">1</span></td>
+<td><span class="red">1</span></td>
+<td><span class="green">1</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[Y = \color{blue}{\beta_{0} + \beta_{1}*treat} + \color{red}{\beta_{2}*post} +   \color{green}{\beta_{3}*treat*post}\]</span></p>
+</div></div>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:20%;">
+<h3 id="visual-interpretation-of-parameters-from-linear-dd-model">Visual interpretation of parameters from linear DD model</h3>
+</div><div class="column" style="width:80%;">
+<p><span class="math display">\[Y=\beta_{0}+\beta_{1}Treat+\beta_{2}Post+\beta_{3}Treat*Post+\varepsilon_{t}\]</span></p>
+</div></div>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<p><span class="math display">\[Y=\beta_{0}+\beta_{1}Treat+\beta_{2}Post+\beta_{3}Treat*Post+\varepsilon_{t}\]</span></p>
+
+<img data-src="images/ddviz.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
 <div class="quarto-auto-generated-content">
@@ -688,6 +872,9 @@ window.addEventListener('load', function () { styleCell_hunai6ovvx3r6tm7mjbt(0, 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-freedman1991" class="csl-entry" role="listitem">
 <a href="https://doi.org/10.2307/270939">Freedman, D.A., 1991. Sociological Methodology 21, 291.</a>
+</div>
+<div id="ref-gertler2016" class="csl-entry" role="listitem">
+Gertler, P.J., Martinez, S., Premand, P., Rawlings, L.B., Vermeersch, C.M., 2016. Impact evaluation in practice. World Bank Publications.
 </div>
 <div id="ref-snow1936" class="csl-entry" role="listitem">
 Snow, J., Frost, W.H., Richardson, B.W., 1936. Snow on cholera: Being a reprint of two papers. Commonwealth Fund, New York.

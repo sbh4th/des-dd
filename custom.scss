@@ -3,8 +3,9 @@
 // fonts
 $font-family-sans-serif: "Lucida Sans", serif !default;
 
-$theme-blue: #0000ff;
-$theme-red: #ff0000;
+$theme-blue: #377eb8;
+$theme-red: #e41a1c;
+$theme-green: #4daf4a;
 $theme-gray: #cccccc;
 $theme-white: #ffffff;
 
@@ -26,6 +27,10 @@ $font-family: 'Allura', cursive;
 
 .red {
   color: $theme-red;
+}
+
+.green {
+  color: $theme-green;
 }
 
 .gray {

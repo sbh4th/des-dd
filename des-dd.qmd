@@ -12,6 +12,9 @@ format:
     slide-number: true
     html-math-method: mathjax
     # embed-resources: true
+include-in-header: 
+  text: |
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 title-slide-attributes:
     data-background-image: "/images/mcgill-epi-logo.png"
     data-background-size: 30%
@@ -20,15 +23,6 @@ bibliography: des.bib
 csl: elsevier-harvard-without-titles.csl
 filters:
   - parse-latex
-  - diagram
-metadata:
-  engine:
-    # Use LuaLaTeX to compile TikZ, define headers
-    tikz:
-      execpath: lualatex
-      additional-packages: |
-        \usepackage{adjustbox}
-        \usetikzlibrary{arrows, shapes}
 ---
 
 ```{r setup, include=FALSE, echo=FALSE}
@@ -322,19 +316,22 @@ See Snow (1855) reprinted as @snow1936
 ## Snow's method
 
 :::: columns
-::: {.column width="50%"}
+::: {.column width="40%"}
 - Couldn't randomize.
 
-- Knew Lambeth required to move intake upstream of London *after* 1849.
+- Knew L required to move intake upstream of London *after* 1849.
 
-- SV did not move, and communities were similar in many ways.
+- SV similar to L, but did not move.
 
-- Used SV as an 'unaffected' control community.
+- SV as 'unaffected' control.
 
 - Did not estimate DD parameter, but idea was there.
 :::
 
-::: {.column width="50%"}
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
 ```{r, echo=F}
 d <- data.frame(
   r = c("Lambeth (treated)", 
@@ -344,7 +341,8 @@ d <- data.frame(
   td = c("-45.2", "11.7", "-56.9"))
 
 colnames(d) <- c("Region", "Rate (1849)", "Rate (1854)", "Post-Pre")
-tt(d) |> theme_tt("striped")
+# tt(d) |> theme_tt("striped")
+kbl(d) |> kable_minimal(c("striped", "hover"),full_width = F, html_font = "Lucida Sans")
 ```
 :::
 ::::
@@ -377,5 +375,190 @@ knitr::include_graphics(here("images", "john-snow.jpg"))
 :::aside
 See Snow (1855) reprinted as @snow1936 and also @freedman1991
 :::
+
+## Difference-in-Differences: Basic Idea
+:::: columns
+::: {.column width="20%"}
+```{tikz dd, echo=F, out.width="80%", cache=TRUE}
+\begin{tikzpicture}[transform shape]
+\tikzset{> = stealth}
+    \node (g) at (1,1) {$Group$};
+    \node (t) at (0,0) {$T$};
+    \node (y) at (2,0) {$Y$};
+    \node (u) at (1, -1) {$Time$};
+    \path[->] (t) edge (y);
+    \path[->] (u) edge (t);
+    \path[->] (u) edge (y);
+    \path[->] (g) edge (t);
+    \path[->] (g) edge (y);
+\end{tikzpicture}
+```
+:::
+
+:::{.column width="80%"}
+
+The simplest DD setting:
+
+- Outcomes are observed for units observed in one of two groups:
+
+    - Treated
+    - Control
+
+- Outcomes observed in one of two time periods.
+
+    - Before intervention
+    - After the intervention.
+
+- Treated: only units in one of the two groups are exposed to a treatment, in the second time period.
+
+- Control: Never observed to be exposed to the treatment.
+:::
+::::
+
+## Difference-in-Differences: Basic Idea
+:::: columns
+::: {.column width="30%"}
+```{r, echo=F, out.width="120%"}
+knitr::include_graphics(here("images", "gertler1.png"))
+```
+:::
+
+:::{.column width="70%"}
+- The average change over time in the non-exposed (control) group is subtracted from the change over time in the exposed (treatment) group.
+
+
+- Double differencing removes biases in second period comparisons between the treatment and control group that could result from:
+
+  - Fixed (i.e., non time-varying) differences between those groups.
+  - Comparisons over time in the treatment group that could be the result of time trends unrelated to the treatment.
+:::
+::::
+
+## Key Assumption: Parallel Trends
+:::: columns
+::: {.column width="20%"}
+```{r, echo=F, out.width="120%"}
+knitr::include_graphics(here("images", "gertler-parallel.png"))
+```
+
+:::
+
+:::{.column width="80%"}
+-   Basic DD controls for any time invariant characteristics of both
+    treated and control groups.
+
+-   Does not control for any **time-varying** characteristics.
+
+-   If another policy/intervention occurs in the treated (or control)
+    group at the same time as the intervention, we cannot cleanly
+    identify the effect of the program.
+
+-   DD main assumption: in the absence of the intervention treated and
+    control groups would have displayed similar **trends**.
+    
+- This is called the *parallel trends* assumption.
+:::
+::::
+
+:::aside
+Impossible to verify (see @gertler2016)
+:::
+
+## Key Assumption: Parallel Trends
+:::: columns
+::: {.column width="50%"}
+-   Basic DD controls for any time invariant characteristics of both
+    treated and control groups.
+
+-   Does not control for any **time-varying** characteristics.
+
+-   If another policy/intervention occurs in the treated (or control)
+    group at the same time as the intervention, we cannot cleanly
+    identify the effect of the program.
+:::
+
+:::{.column width="50%"}
+
+-   DD main assumption: in the absence of the intervention treated and
+    control groups would have displayed similar **trends**.
+    
+```{r, echo=F, out.width="30%", fig.align="center"}
+knitr::include_graphics(here("images", "gertler-parallel.png"))
+```
+    
+- *Parallel trends* assumption.
+:::
+::::
+
+:::aside
+Impossible to verify (see @gertler2016)
+:::
+
+## Difference-in-Differences without Regression
+
+DD is just differences in means! 
+<br></br>
+
+:::: columns
+::: {.column width="45%"}
+Let $\mu_{it}=E(Y_{it})$
+
+- $i=0$ is control group, $i=1$ is treatment.
+
+- $t=0$ is pre-period, $t=1$ is post-period.
+
+- One 'difference' estimate of causal effect is: $\mu_{11}-\mu_{10}$ (pre-post in treated)
+
+:::
+
+::: {.column width="45%"}
+
+- Differences-in-Differences estimate of causal effect is: $(\mu_{11}-\mu_{10})-(\mu_{01}-\mu_{00})$
+
+Area   |     Before     |  After  | Difference |
+---------| ---------------| -------| --------------------|
+Treated  |      135     |    100    |       -35 |
+Control   |     80     |     60     |       -20 |
+T - C   |      55     |     40     |       -15  |  
+    
+:::
+::::
+
+## DD Regression: Two Groups, Two Periods (2x2)
+
+:::: columns
+::: {.column width="20%"}
+- Single treated and control group, two periods
+
+- $\beta_{1}$ = Treated group
+
+- $\beta_{2}$ = Post period  
+
+- $\beta_{3}$ = Product term  
+
+:::
+::: {.column width="5%"}
+:::
+
+::: {.column width="75%"}
+y | group | time | treat? | post? | treatXpost |
+--|--|--|--|--|--|
+$\vdots$  | 1 | 1 | 0 | 0 | 0 | 
+$\vdots$  | 1 | 2 | 0 | [1]{.red} | 0 | 
+$\vdots$  | 2 | 1 | [1]{.blue} | 0 | 0 | 
+$\vdots$  | 2 | 2 | [1]{.blue} | [1]{.red} | [1]{.green} |
+: {.table .table-striped}
+
+$$Y = \color{blue}{\beta_{0} + \beta_{1}*treat} + \color{red}{\beta_{2}*post} +   \color{green}{\beta_{3}*treat*post}$$
+:::
+::::
+
+##
+$$Y=\beta_{0}+\beta_{1}Treat+\beta_{2}Post+\beta_{3}Treat*Post+\varepsilon_{t}$$
+```{r, echo=F, out.width="100%", fig.align = "center"}
+knitr::include_graphics(here("images", "ddviz.png"))
+```
+
+
 
 ## References
