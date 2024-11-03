@@ -606,13 +606,15 @@ $$Y=\beta_{0}+\beta_{1}Treat+\beta_{2}Post+\beta_{3}Treat*Post+\varepsilon_{t}$$
 
 \end{tikzpicture}
 ```
+:::
+::::
 
-.center[
-```{r, echo=F, out.width="100%"}
+## 
+
+```{r, echo=F, out.width="100%", fig.align = "center"}
 knitr::include_graphics(here("images", "ddviz.png"))
 ```
-]
-]
+
 
 ---
 ## Difference-in-differences (usually) estimates the ATT

@@ -598,7 +598,7 @@ Sam Harper
 <section id="why-is-snows-work-compelling" class="slide level2">
 <h2>Why is Snow’s work compelling?</h2>
 <div class="columns">
-<div class="column" style="width:25%;">
+<div class="column" style="width:20%;">
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -610,7 +610,7 @@ Sam Harper
 </div>
 </div><div class="column" style="width:5%;">
 
-</div><div class="column" style="width:70%;">
+</div><div class="column" style="width:75%;">
 <ul>
 <li>Evidence of pre-treatment equivalence between groups:</li>
 </ul>
@@ -850,18 +850,542 @@ Sam Harper
 </section>
 <section id="section-3" class="slide level2">
 <h2></h2>
-<div class="columns">
-<div class="column" style="width:20%;">
-<h3 id="visual-interpretation-of-parameters-from-linear-dd-model">Visual interpretation of parameters from linear DD model</h3>
-</div><div class="column" style="width:80%;">
 <p><span class="math display">\[Y=\beta_{0}+\beta_{1}Treat+\beta_{2}Post+\beta_{3}Treat*Post+\varepsilon_{t}\]</span></p>
-</div></div>
-</section>
+
+<img data-src="images/dd-avg-parameters.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
 <section id="section-4" class="slide level2">
 <h2></h2>
 <p><span class="math display">\[Y=\beta_{0}+\beta_{1}Treat+\beta_{2}Post+\beta_{3}Treat*Post+\varepsilon_{t}\]</span></p>
 
-<img data-src="images/ddviz.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<img data-src="des-dd_files/figure-revealjs/unnamed-chunk-19-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="difference-in-differences-estimates-the-att" class="slide level2">
+<h2>Difference-in-differences estimates the ATT</h2>
+<ul>
+<li><p>Our DD model is: <span class="math inline">\(Y=\beta_{0}+\beta_{1}Treat+\beta_{2}Post+\beta_{3}Treat*Post+\varepsilon\)</span>.</p>
+<ul>
+<li>we showed that <span class="math inline">\(\beta_{3}\)</span> is the DD estimate in the linear model case.</li>
+</ul></li>
+<li><p>In the (possibly counterfactual) absence of intervention, the expected outcome is:</p>
+<ul>
+<li><span class="math inline">\(E\left(Y_{i}^{0}|T=1,A=0\right)=\beta_{1}+\beta_{2}\)</span></li>
+</ul></li>
+<li><p>In the (possibly counterfactual) presence of intervention, the expected outcome is:</p>
+<ul>
+<li><span class="math inline">\(E\left(Y_{i}^{1}|T=1,A=1\right)=\beta_{1}+\beta_{2}+\beta_{3}\)</span></li>
+</ul></li>
+<li><p>ATT is the expected difference in <span class="math inline">\(Y_{i}^{1}-Y_{i}^{0}\)</span> for those treated in the post-period:</p>
+<ul>
+<li><span class="math inline">\(ATT=E\left(Y^{1}-Y^{0}|T=1\right)=\beta_{3}\)</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="simple-two-period-two-group-example" class="slide level2">
+<h2>Simple Two Period, Two Group Example</h2>
+<p>Back to Snow’s water pump example.</p>
+<div class="columns">
+<div class="column" style="width:20%;">
+<p>How to estimate the impact?</p>
+<ul>
+<li><p><span class="math inline">\(Treat=1\)</span> if Lambeth, 0 if SW</p></li>
+<li><p><span class="math inline">\(Post=1\)</span> if 1854, 0 if 1849</p></li>
+<li><p><span class="math inline">\(Treat*Post=1\)</span> if Lambeth in 1854, 0 otherwise.</p></li>
+</ul>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:70%;">
+<p><span class="math inline">\(Y=\beta_{0}+\beta_{1}Treat+\beta_{2}Post+\beta_{3}Treat*Post+\varepsilon\)</span></p>
+<table class="table table-striped caption-top">
+<thead>
+<tr class="header">
+<th>Province, Time</th>
+<th>Estimate</th>
+<th>Time Diff</th>
+<th>DD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SW, 1849</td>
+<td><span class="math inline">\(\beta_{0}\)</span></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td><span class="math inline">\(\beta_{2}\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Lambeth, 1849</td>
+<td><span class="math inline">\(\beta_{0} + \beta_{2}\)</span></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td><span class="math inline">\(\beta_{3}\)</span></td>
+</tr>
+<tr class="odd">
+<td>SW, 1854</td>
+<td><span class="math inline">\(\beta_{0} + \beta_{1}\)</span></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td><span class="math inline">\(\beta_{2} + \beta_{3}\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Lambeth, 1854</td>
+<td><span class="math inline">\(\beta_{0} + \beta_{1} + \beta_{2} + \beta_{3}\)</span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div></div>
+</section>
+<section id="reformulation-of-the-model-using-fixed-effects" class="slide level2">
+<h2>Reformulation of the model using ‘fixed effects’</h2>
+<div class="columns">
+<div class="column" style="width:20%;">
+<p>Express our earlier model using ‘fixed effects’:</p>
+<ul>
+<li><p>Dummy for Group</p></li>
+<li><p>Dummy for Time</p></li>
+<li><p><em>Time-varying</em> policy indicator</p></li>
+</ul>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:75%;">
+<p><span class="math display">\[Y = \color{blue}{\beta_{0} + \beta_{1}*Group2} + \color{red}{\beta_{2}*Time2} +   \color{green}{\beta_{3}*policy}\]</span></p>
+<table class="table table-striped caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>y</th>
+<th>group</th>
+<th>time</th>
+<th>treat?</th>
+<th>post?</th>
+<th>treatXpost</th>
+<th>Group 2</th>
+<th>Time 2</th>
+<th>policy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>.</td>
+<td>1</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td><span class="red">1</span></td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>.</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td><span class="blue">1</span></td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>.</td>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td><span class="blue">1</span></td>
+<td><span class="red">1</span></td>
+<td><span class="green">1</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(\color{green}{\beta_{3}}\)</span> still estimates the ‘difference-in-differences’ parameter.</p>
+</div></div>
+</section>
+<section id="reformulation-of-the-model-using-fixed-effects-1" class="slide level2">
+<h2>Reformulation of the model using ‘fixed effects’</h2>
+<div class="columns">
+<div class="column" style="width:20%;">
+<p>Express our earlier model using ‘fixed effects’:</p>
+<ul>
+<li><p>Dummy for Group</p></li>
+<li><p>Dummy for Time</p></li>
+<li><p><em>Time-varying</em> policy indicator</p></li>
+</ul>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:75%;">
+<p><span class="math display">\[Y = \color{blue}{\beta_{0} + \beta_{1}*Group2} + \color{red}{\beta_{2}*Time2} +   \color{green}{\beta_{3}*policy}\]</span></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/fe-table.png" class="quarto-figure quarto-figure-center" style="width:120.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><span class="math inline">\(\color{green}{\beta_{3}}\)</span> still estimates the ‘difference-in-differences’ parameter.</p>
+</div></div>
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<h3 id="what-about-multiple-treated-groups">What about multiple treated groups?</h3>
+<ul>
+<li><p>Easy to rewrite our earlier model for multiple groups <strong>treated at the same time.</strong></p></li>
+<li><p>3 units and 3 time periods.</p></li>
+<li><p>Groups 1 and 3 implement policy at <span class="green">T2</span>.</p></li>
+<li><p><span class="blue">g2</span> and <span class="blue">g3</span> are dummies for group 2 and 3</p></li>
+<li><p><span class="red">t2</span> and <span class="red">t3</span> are respective time dummies for periods 2 and 3.</p></li>
+</ul>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:50%;">
+<table class="table table-striped caption-top">
+<thead>
+<tr class="header">
+<th>y</th>
+<th>group</th>
+<th>time</th>
+<th>policy</th>
+<th>g2</th>
+<th>g3</th>
+<th>t2</th>
+<th>t3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>.</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>.</td>
+<td>1</td>
+<td>2</td>
+<td><span class="green">1</span></td>
+<td>0</td>
+<td>0</td>
+<td><span class="red">1</span></td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>.</td>
+<td>1</td>
+<td>3</td>
+<td><span class="green">1</span></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td><span class="red">1</span></td>
+</tr>
+<tr class="even">
+<td>.</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td><span class="blue">1</span></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>.</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td><span class="blue">1</span></td>
+<td>0</td>
+<td><span class="red">1</span></td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>.</td>
+<td>2</td>
+<td>3</td>
+<td>0</td>
+<td><span class="blue">1</span></td>
+<td>0</td>
+<td>0</td>
+<td><span class="red">1</span></td>
+</tr>
+<tr class="odd">
+<td>.</td>
+<td>3</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td><span class="blue">1</span></td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>.</td>
+<td>3</td>
+<td>2</td>
+<td><span class="green">1</span></td>
+<td>0</td>
+<td><span class="blue">1</span></td>
+<td><span class="red">1</span></td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>.</td>
+<td>3</td>
+<td>3</td>
+<td><span class="green">1</span></td>
+<td>0</td>
+<td><span class="blue">1</span></td>
+<td>0</td>
+<td><span class="red">1</span></td>
+</tr>
+</tbody>
+</table>
+</div></div>
+</section>
+<section id="extending-the-model-to-multiple-groupstimes" class="slide level2">
+<h2>Extending the model to multiple groups/times</h2>
+<ul>
+<li>The regression model with group and time fixed effects would now look something like this (where <span class="math inline">\(\color{red}{\beta_{5}}\)</span> is the DD estimate where policy=1):</li>
+</ul>
+<p><span class="math display">\[Y_{gt}=\beta_{0}+\beta_{1}g2+\beta_{2}g3+\beta_{3}t2+\beta_{4}t3+\color{red}{\beta_{5}}\color{black}{p_{gt}}+\varepsilon_{st}\]</span></p>
+<ul>
+<li>Reference categories (for interpreting <span class="math inline">\(\beta_{0}\)</span>) are group 1 <span class="math inline">\((g1)\)</span> and time 1 <span class="math inline">\((t1)\)</span>.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>More generally, you could write the basic equation with multiple group <span class="math inline">\((\gamma_{g})\)</span> and time <span class="math inline">\((\tau_{t})\)</span> fixed effects as:</li>
+</ul>
+<p><span class="math display">\[Y_{gt}=\alpha + \gamma_{g} + \tau_{t} + \color{red}{\delta^{DD}} \color{black}{p_{gt}}+\varepsilon_{st}\]</span> where <span class="math inline">\(\color{red}{\delta^{DD}}\)</span> is the difference-in-differences estimate for groups treated at time t.</p>
+</div>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+</section>
+<section id="extending-the-basic-2x2-dd" class="slide level2">
+<h2>Extending the basic 2x2 DD</h2>
+<div class="columns">
+<div class="column" style="width:20%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="des-dd_files/figure-revealjs/ddc-1.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:75%;">
+<p>Note that our basic regression model assumes the only time-varying factor is the policy: <span class="math display">\[Y_{gt}=\alpha + \gamma_{g} + \tau_{t} + \color{red}{\delta^{DD}} \color{black}{p_{gt}} + \varepsilon_{gt}\]</span></p>
+<p>What if there are confounders of the decision to change the policy?</p>
+<p>We may have omitted important factors that:</p>
+<ul>
+<li>differ by treatment status.</li>
+<li>affect the outcome.</li>
+<li><strong>are time-varying</strong>, but not affected by the treatment <span class="math inline">\((TVC)\)</span>.</li>
+</ul>
+</div></div>
+
+<aside><div>
+<p>The literature on covariates is evolving rapidly. See <span class="citation" data-cites="caetano2022">Caetano et al. (<a href="#/references" role="doc-biblioref" onclick="">2022</a>)</span> for more details.</p>
+</div></aside></section>
+<section id="adding-time-varying-covariates" class="slide level2">
+<h2>Adding time-varying covariates</h2>
+<ul>
+<li><p>Suppose the policy is a soft drink tax and the outcome calories consumed (linear).</p></li>
+<li><p>We might worry that <em>changes in</em> the density of fast food restaurants could be a common cause of both. Now add measured time-varying confounders:</p></li>
+</ul>
+<p><span class="math display">\[Y_{gt}=\alpha + \gamma_{g} + \tau_{t} + \color{red}{\delta^{DD}} \color{black}{p_{gt}}+ \zeta Z_{gt}+\varepsilon_{gt}\]</span></p>
+<ul>
+<li><p>where <span class="math inline">\(\zeta Z_{gt}\)</span> is a vector of other controls at the cluster level.</p></li>
+<li><p>Important especially if you think other policies may have been implemented simultaneously with treatment.</p></li>
+<li><p>Now, conditional on FEs and <span class="math inline">\(\zeta Z_{gt}\)</span>, we assume that the timing of the change in policy is as good as random.</p></li>
+</ul>
+</section>
+<section id="evaluating-impact-on-inequalities" class="slide level2">
+<h2>Evaluating impact on inequalities</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/mccormick-title.png" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><p>Evaluated impact of MA reform on inequalities in hospital admissions.</p></li>
+<li><p>Compared MA to nearby states: NY, NJ, PA.</p></li>
+<li><p>Intervention “worked”: % uninsured halved (12% to 6%) from 2004-06 to 2008-09.</p></li>
+</ul>
+
+<aside><div>
+<p>See <span class="citation" data-cites="mccormick2015">McCormick et al. (<a href="#/references" role="doc-biblioref" onclick="">2015</a>)</span></p>
+</div></aside></section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<h3 id="we-want-credible-counterfactuals">We want credible counterfactuals</h3>
+<ul>
+<li><p>Strong visual evidence that pre-intervention trends similar in treated and control groups.</p></li>
+<li><p>Adds credibility to assumption that post-intervention trends <span class="red">would have been similar</span> in the absence of the intervention.</p></li>
+</ul>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:55%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/mccormick-fig.png" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<p>Little evidence of differential impact of health reform on racial/ethnic differences in hospital admissions</p>
+
+<img data-src="images/mccormick-t3.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"></section>
+<section id="section-8" class="slide level2 center">
+<h2></h2>
+<div id="title-slide" class="center">
+<p><span class="large">What about the impact on inequalities?</span></p>
+</div>
+</section>
+<section id="our-basic-setup-was-for-group-averages" class="slide level2">
+<h2>Our basic setup was for group <em>averages</em></h2>
+
+<img data-src="des-dd_files/figure-revealjs/unnamed-chunk-24-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="lets-add-two-social-groups-per-unit" class="slide level2">
+<h2>Let’s add two social groups per unit</h2>
+
+<img data-src="des-dd_files/figure-revealjs/unnamed-chunk-25-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="section-9" class="slide level2">
+<h2></h2>
+<p><span class="math inline">\(Y=\beta_{0}+\beta_{1}Treat+\beta_{2}Post+\beta_{3}Treat*Post+\beta_{4}High\)</span></p>
+
+<img data-src="des-dd_files/figure-revealjs/unnamed-chunk-26-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="section-10" class="slide level2">
+<h2></h2>
+<p><span class="math inline">\(Y=\beta_{0}+\beta_{1}Treat+\beta_{2}Post+\beta_{3}Treat*Post+\beta_{4}High\)</span></p>
+
+<img data-src="des-dd_files/figure-revealjs/unnamed-chunk-27-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="allowing-for-group-heterogeneity" class="slide level2">
+<h2>Allowing for group heterogeneity</h2>
+<p><br><br></p>
+<div class="columns">
+<div class="column" style="width:30%;">
+<ul>
+<li><p>Socioeconomic differences may be different magnitude in treated vs.&nbsp;control areas.</p></li>
+<li><p>Better resources, more advocacy, different demographics, etc.</p></li>
+</ul>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:65%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="des-dd_files/figure-revealjs/unnamed-chunk-28-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="section-11" class="slide level2">
+<h2></h2>
+<p><span class="math inline">\({\scriptstyle Y=\beta_{0}+\beta_{1}Treat+\beta_{2}Post+\beta_{3}Treat*Post+\beta_{4}High}\)</span></p>
+</section>
+<section id="section-12" class="slide level2">
+<h2></h2>
+<p><span class="math inline">\({\scriptstyle Y=\beta_{0}+\beta_{1}Treat+\beta_{2}Post+\beta_{3}Treat*Post+\beta_{4}High + \beta_{5}Treat*High}\)</span></p>
+
+<img data-src="des-dd_files/figure-revealjs/unnamed-chunk-29-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="allowing-for-time-heterogeneity" class="slide level2">
+<h2>Allowing for time heterogeneity</h2>
+<p><br><br></p>
+<div class="columns">
+<div class="column" style="width:30%;">
+<ul>
+<li><p>Secular trends may be changing differentially by social group in <em>all</em> areas.</p></li>
+<li><p>Different baseline health, health behaviors, access to resources, etc.</p></li>
+</ul>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:65%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="des-dd_files/figure-revealjs/unnamed-chunk-30-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="section-13" class="slide level2">
+<h2></h2>
+<p><span class="math inline">\({\scriptstyle Y=\beta_{0}+\beta_{1}Treat+\beta_{2}Post+\beta_{3}Treat*Post+\beta_{4}High + \beta_{5}Treat*High + \beta_{6}Post*High}\)</span></p>
+
+<img data-src="des-dd_files/figure-revealjs/unnamed-chunk-31-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="section-14" class="slide level2">
+<h2></h2>
+<p><span class="math inline">\({\scriptstyle Y=\beta_{0}+\beta_{1}Treat+\beta_{2}Post+\beta_{3}Treat*Post+\beta_{4}High + \beta_{5}Treat*High + \beta_{6}Post*High + \beta_{7}Treat*Post*High}\)</span></p>
+
+<img data-src="des-dd_files/figure-revealjs/unnamed-chunk-32-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
 <div class="quarto-auto-generated-content">
@@ -870,11 +1394,17 @@ Sam Harper
 </div>
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-caetano2022" class="csl-entry" role="listitem">
+Caetano, C., Callaway, B., Payne, S., Rodrigues, H.S., 2022. <a href="http://arxiv.org/abs/2202.02903">Difference in <span>Differences</span> with <span>Time-Varying Covariates</span></a>.
+</div>
 <div id="ref-freedman1991" class="csl-entry" role="listitem">
 <a href="https://doi.org/10.2307/270939">Freedman, D.A., 1991. Sociological Methodology 21, 291.</a>
 </div>
 <div id="ref-gertler2016" class="csl-entry" role="listitem">
 Gertler, P.J., Martinez, S., Premand, P., Rawlings, L.B., Vermeersch, C.M., 2016. Impact evaluation in practice. World Bank Publications.
+</div>
+<div id="ref-mccormick2015" class="csl-entry" role="listitem">
+<a href="https://doi.org/10.1136/bmj.h1480">McCormick, D., Hanchate, A.D., Lasser, K.E., Manze, M.G., Lin, M., Chu, C., Kressin, N.R., 2015. BMJ 350, h1480–h1480.</a>
 </div>
 <div id="ref-snow1936" class="csl-entry" role="listitem">
 Snow, J., Frost, W.H., Richardson, B.W., 1936. Snow on cholera: Being a reprint of two papers. Commonwealth Fund, New York.

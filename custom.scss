@@ -47,6 +47,16 @@ $font-family: 'Allura', cursive;
   color: $theme-white;
 }
 
+.table-striped {
+  > tbody > tr:nth-of-type(odd) > * {
+    background-color: #f2f2f2;
+  }
+}
+
+.large {
+   font-size: 1.5em;
+}
+
 /* alignment */
 
 .h2center h2 {

@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.7)  29 OCT 2024 17:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.29)  1 NOV 2024 11:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**tikz7c524f4e7f3d.tex
-(./tikz7c524f4e7f3d.tex
+**tikze0de1b0a679d.tex
+(./tikze0de1b0a679d.tex
 LaTeX2e <2024-06-01> patch level 2
-L3 programming layer <2024-09-10>
+L3 programming layer <2024-10-09>
 (/Users/samharper/Library/TinyTeX/texmf-dist/tex/latex/standalone/standalone.cls
 Document Class: standalone 2022/10/10 v1.3b Class to compile TeX sub-files standalone
 (/Users/samharper/Library/TinyTeX/texmf-dist/tex/latex/tools/shellesc.sty
@@ -323,9 +323,8 @@ File: tikzlibrarymatrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count304
 \l__pdf_internal_box=\box66
-)
-No file tikz7c524f4e7f3d.aux.
-\openout1 = `tikz7c524f4e7f3d.aux'.
+) (./tikze0de1b0a679d.aux)
+\openout1 = `tikze0de1b0a679d.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
@@ -381,16 +380,20 @@ Package grfext Info: Graphics extension search list:
 (/Users/samharper/Library/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-! Missing \endcsname inserted.
-<to be read again> 
-                   \end/ 
-l.38 \end
-         {document} 
+
+! Package tikz Error: You need to load a decoration library.
+
+See the tikz package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.40 ...ace, amplitude=5pt},xshift=1pt,yshift=0pt]
+                                                   (1.0,1.5) -- (1.0,0.7) no... 
 Here is how much of TeX's memory you used:
- 13640 strings out of 475478
- 281586 string characters out of 5774375
- 631663 words of memory out of 5000000
- 36067 multiletter control sequences out of 15000+600000
+ 13653 strings out of 475476
+ 281955 string characters out of 5774336
+ 632663 words of memory out of 5000000
+ 36079 multiletter control sequences out of 15000+600000
  558523 words of font info for 38 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  117i,7n,121p,421b,625s stack positions out of 10000i,1000n,20000p,200000b,200000s

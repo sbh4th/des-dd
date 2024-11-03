@@ -49,4 +49,10 @@ First, we have to understand something about what we mean by the terms 'social' 
 
 A second key concept here is the 'inequality' part of 'social inequality'. We could spend a lot of time talking about what we mean by 'inequality', as well as the different ways we may want to measure it, but for the purposes of this talk I'm going to focus mostly on differences in health status between social groups. 
 
+Finally, what does it mean to 'study' social inequalities in health? That means asking and answering questions to help further our understanding of what causes social inequalities in health, and how we might go about reducing them. This involves two types of questions. Descriptive questions are about trying to measure and monitor the magnitude of social inequalities in health. That is important work, but if we want to do something to reduce social inequalities in health, we need to know both what causes them, and how we might design interventions to ultimately reduce them. 
+
+I want to focus on these latter questions of interventions. One tool we have for trying to assess how 
+
+
+
 I will be discussing the difference-in-differences (DiD) method, which is a quasi-experimental design that is widely used in social epidemiology.

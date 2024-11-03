@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.7)  29 OCT 2024 17:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.29)  1 NOV 2024 11:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**tikz7bc64997eba5.tex
-(./tikz7bc64997eba5.tex
+**tikzeeee4a97d56a.tex
+(./tikzeeee4a97d56a.tex
 LaTeX2e <2024-06-01> patch level 2
-L3 programming layer <2024-09-10>
+L3 programming layer <2024-10-09>
 (/Users/samharper/Library/TinyTeX/texmf-dist/tex/latex/standalone/standalone.cls
 Document Class: standalone 2022/10/10 v1.3b Class to compile TeX sub-files standalone
 (/Users/samharper/Library/TinyTeX/texmf-dist/tex/latex/tools/shellesc.sty
@@ -323,9 +323,8 @@ File: tikzlibrarymatrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count304
 \l__pdf_internal_box=\box66
-)
-No file tikz7bc64997eba5.aux.
-\openout1 = `tikz7bc64997eba5.aux'.
+) (./tikzeeee4a97d56a.aux)
+\openout1 = `tikzeeee4a97d56a.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
@@ -380,19 +379,34 @@ Package grfext Info: Graphics extension search list:
 (grfext)             \AppendGraphicsExtensions on input line 504.
 (/Users/samharper/Library/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
-))
-! Missing \endcsname inserted.
-<to be read again> 
-                   \end/ 
-l.37 \end
-         {document} 
+)) (/Users/samharper/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/Users/samharper/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/Users/samharper/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen261
+\pgfdecoratedremainingdistance=\dimen262
+\pgfdecoratedinputsegmentcompleteddistance=\dimen263
+\pgfdecoratedinputsegmentremainingdistance=\dimen264
+\pgf@decorate@distancetomove=\dimen265
+\pgf@decorate@repeatstate=\count311
+\pgfdecorationsegmentamplitude=\dimen266
+\pgfdecorationsegmentlength=\dimen267
+)
+\tikz@lib@dec@box=\box68
+) (/Users/samharper/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex))
+
+[1
+
+{/Users/samharper/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+! Undefined control sequence.
+\sa@orig@endtikzpicture ...ist@globally \endscope 
+                                                  \let \pgf@baseline =\pgf@s...
+l.68 \end{tikzpicture}
+                       
 Here is how much of TeX's memory you used:
- 13640 strings out of 475478
- 281586 string characters out of 5774375
- 631663 words of memory out of 5000000
- 36067 multiletter control sequences out of 15000+600000
+ 14176 strings out of 475476
+ 299293 string characters out of 5774336
+ 649976 words of memory out of 5000000
+ 36588 multiletter control sequences out of 15000+600000
  558523 words of font info for 38 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 117i,7n,121p,421b,625s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 117i,7n,121p,421b,630s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 !  ==> Fatal error occurred, no output PDF file produced!
