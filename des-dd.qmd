@@ -1080,25 +1080,23 @@ Figure from @rosenbaum2017; see also @roth2023a
 :::
 
 ## Implications for counterfactuals
+The change in the treated group in both graphs is identical (from 1.4 to 2.5).
+
 :::: columns
 ::: {.column width="45%"}
 
-Parallel trends in levels ($\Delta 0.8$) consistent with positive impact of treatment.
-
 ```{tikz, fig.align="center", file="code/two-groups-no-betas.tex"}
 ```
+Parallel trends in levels ($\Delta 0.8$) consistent with positive impact of treatment.
 :::
 
 ::: {.column width="55%"}
 
-Parallel trends in logs ($\times 1.3$) consistent with negative impact of treatment.
-
 ```{tikz, fig.align="center", file="code/two-groups-log-scale.tex"}
 ```
+Parallel trends in logs ($\times 1.3$) consistent with negative impact of treatment.
 :::
 ::::
-
-The change in the treated group in both graphs is identical (from 1.4 to 2.5).
 
 # 4. Extensions
 
