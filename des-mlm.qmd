@@ -102,7 +102,7 @@ Social context a crucial element of conceptual models for 'social determinants o
 :::
 
 ::: {.column width="45%"}
-![John Snow's 'Grand Experiment' of 1855 [-@snow1936]](images/snow-map.png)
+![John Snow's 'Grand Experiment'. See Snow (1855) reprinted [-@snow1936]](images/snow-map.png)
 :::
 :::
 

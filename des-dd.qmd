@@ -75,7 +75,7 @@ library(tinytable)
     - Overall effect of social group categories (total “effects”) 
     - Direct/Indirect effects (causal mediation)
 
-3. Policies to address causes and/or remediate social differences in health. (Policy/Intervention)
+3. [Policies to address causes]{.blue} and/or remediate social differences in health. (Policy/Intervention)
 :::
 
 ::: {.column width="40%"}
@@ -757,7 +757,7 @@ y | group | time | policy | g2 | g3 | t2 | t3
 ::::
 
 ## Extending the model to multiple groups/times
--   The regression model with group and time fixed effects would now look something like this (where $\color{red}{\beta_{5}}$ is the DD estimate where policy=1):
+-   The regression model with group and time fixed effects would now look something like this (where $\color{red}{\beta_{5}}$ is the DD estimate where policy=1 vs. 0):
 
 $$Y_{gt}=\beta_{0}+\beta_{1}g2+\beta_{2}g3+\beta_{3}t2+\beta_{4}t3+\color{red}{\beta_{5}}\color{black}{p_{gt}}+\varepsilon_{st}$$
 
@@ -899,6 +899,11 @@ knitr::include_graphics(here("images", "hu-2016-t1.png"))
 <br>
 
 > For comparison we selected countries that were in a similar stage of awareness of health inequalities, but that had not implemented a national strategy to tackle health inequalities.
+
+- Treatment: 2000s vs. 1990s
+- Comparison: England vs. Others
+- SEP: Low vs. High Education
+
 :::
 :::
 ::::
