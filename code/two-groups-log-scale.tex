@@ -1,0 +1,28 @@
+\begin{tikzpicture}[scale=2]
+    
+	% Draw axes
+  \draw [<->,thick] (-1,2) node (yaxis) [above] {$ln(y)$} |- (4.5,-1) node (xaxis) [right] {$time (X)$};
+	\draw[thick, color=black, dashed] (2,-1) coordinate (t0_0) -- (2,2) coordinate (t0_1);
+	
+	% Legend
+	\coordinate (T) at (4,0.8);
+    \fill[red] (T) circle (1pt) node[right, color=black] {Treated};
+	\coordinate (C) at (4,0.6);
+    \fill[blue] (C) circle (1pt) node[right, color=black] {Control};
+	
+	% Intervention line
+	\draw[thick, -> ] (2.6,2.0) coordinate (t0_0) node[right] {Intervention} -- (2.1,2.0) coordinate (t0_1);
+
+    % control
+	\draw[thick, color=blue] (0.5,-0.69) coordinate (c0_0) -- (3.5,0.26) coordinate (c0_1);
+    \fill[blue] (c0_0) circle (1pt);
+    \fill[blue] (c0_1) circle (1pt);
+    % treated
+	\draw[thick, color=red] (0.5,0.33) coordinate (t0_0) -- (2.0,0.91) coordinate (t0_1);
+	\draw[thick, color=red] (2.0,0.91) coordinate (t1_0) -- (3.5,0.91) coordinate (t1_1);
+    \fill[red] (t0_0) circle (1pt);
+    \fill[red] (t1_1) circle (1pt);
+    % counterfactual
+	\draw[thick, dashed, color=red] (2.0,0.91) coordinate (t1_0) -- (3.5,1.29) coordinate (t1_1);
+
+\end{tikzpicture}
