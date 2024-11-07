@@ -55,7 +55,7 @@ Image credits: @subramanian2003b and  https://bookdown.org/steve_midway/DAR/rand
 ::: columns
 ::: {.column width="65%"}
 -   Multilevel methods developed in 1980s in demography (Entwistle), statistics (Wong/Mason), education (Bryk/Raudenbush).
--   Critical need for theory.
+-   Use depends critically on theory.
 
 ::: {style="font-size: larger;"}
 > The development of multi-level approaches in epidemiologic research may facilitate research which elucidates the [independent and joint effects]{.red} of individual and environmental factors on health behaviors and health outcomes.
