@@ -11,8 +11,8 @@ format:
     height: 900
     slide-number: true
     html-math-method: mathjax
-    standalone: false
-    embed-resources: false
+    standalone: true
+    embed-resources: true
 title-slide-attributes:
     data-background-image: "images/mcgill-epi-logo.png"
     data-background-size: 30%
