@@ -24,12 +24,31 @@ csl: elsevier-harvard-without-titles.csl
 filters:
   - parse-latex
 ---
+## 
+::: columns
+::: {.column width="40%"}
+"Multilevel" structure:
+<br>
+<br>
+![](images/mlm-structure.png)
+:::
+
+::: {.column width="60%"}
+"Multilevel" models:
+![](images/mlm-types.png)
+:::
+:::
+
+::: aside
+Image credits: @subramanian2003b and  https://bookdown.org/steve_midway/DAR/random-effects.html
+:::
 
 ##  {.center background-image="images/green.jpg"}
 
 [Prelude]{.act}
 
 ##  {.center background-image="images/90s-tape.png"}
+
 
 ## 
 
@@ -70,6 +89,40 @@ Social context and 'population perspective' has been forgotten.
 
 ::: aside
 @krieger1994; @schwartz1994; @pearce1996; @susser1996a
+:::
+
+## And needs to refocus on "environments"
+::: columns
+::: {.column width="50%"}
+![](images/syme-1994-title.png){fig-align="center" width="70%"}
+:::
+
+::: {.column width="50%"}
+
+<br>
+
+> Our work with individuals has been useful and productive, but this approach alone clearly will not lead to an effective program of health promotion and disease prevention. A new inititive focusing on the environments in which we live much now become a priority for us all.
+
+:::
+:::
+
+:::aside
+@syme1994
+:::
+
+##
+::: columns
+::: {.column width="50%"}
+![](images/mckinlay-epiphenomena.png){fig-align="center" width="100%"}
+:::
+
+::: {.column width="50%"}
+![](images/mckinlay-1999-quote.png){fig-align="center"}
+:::
+:::
+
+:::aside
+@mckinlay1999
 :::
 
 ## Multilevel health determinants
@@ -465,8 +518,8 @@ Random effects: [Yes!]{.blue} ![](images/subu-hsr-2003.png){width="70%"}
 See also @hong2008; @cerda2010; @glymour2010; @hubbard2010; @subramanian2010
 :::
 
-## 
-![](images/jokela-2014-title.png){fig-align="center" width="80%"}
+## "Fixing" neighborhood research?
+![](images/jokela-2014-title.png){fig-align="center" width="70%"}
 
 > These findings provide little support for social causation as the explanation for associations between neighborhood characteristics and health outcomes.
 
@@ -482,6 +535,45 @@ See also @hong2008; @cerda2010; @glymour2010; @hubbard2010; @subramanian2010
 
 ::: aside
 @clampet-lundquist2008; @ludwig2008; Also @sampson2008a
+:::
+
+## Healthy discussion of MTO design / results
+::: columns
+::: {.column width="55%"}
+![](images/massey-2008-ajs.png){width=100%}
+:::
+
+::: {.column width="45%"}
+<br>
+
+>  ...the ITT estimate...can successfully measure the effects of the policy initiative, but is not well suited to capturing neighborhood effects.
+
+- Assessed *duration* of exposure to neighborhood conditions
+- Find benefits of shorter exposure to low-poverty
+:::
+:::
+
+::: aside
+@clampet-lundquist2008
+:::
+
+## Healthy discussion of MTO design / results
+::: columns
+::: {.column width="45%"}
+<br>
+
+> Random assignment of families to different MTO mobility groups...generates large differences in average neighborhood trajectories
+
+> Nonexperimental analyses of the type conducted by CM reintroduce all of the selection bias problems that MTO was designed to overcome.
+:::
+
+::: {.column width="55%"}
+![](images/ludwig-2008-ajs.png)
+:::
+:::
+
+::: aside
+@ludwig2008
 :::
 
 ## Observational data as a neighborhood experiment
@@ -505,11 +597,61 @@ See also @hong2008; @cerda2010; @glymour2010; @hubbard2010; @subramanian2010
 :::
 
 ## Lifecourse 'lens' on MTO
+::: columns
+::: {.column width="35%"} 
 
-![](images/chetty-2016-fig.png){fig-align="center" width="60%"}
+- Moving when young increases college attendance and earnings
+- Moving as an adolescent has slightly negative impacts. 
+
+> ... suggests that the duration of exposure to better environments during childhood is an important determinant
+:::
+
+::: {.column width="65%"}
+![](images/chetty-2016-fig.png){fig-align="center"}
+:::
+:::
 
 :::aside
 @chetty2016
+:::
+
+##
+::: columns
+::: {.column width="60%"}
+![](images/hamad-2020-title.png){fig-align="center" width="100%"}
+:::
+
+::: {.column width="40%"}
+<br>
+
+> ...incoming refugees [were assigned]{.blue} to neighborhoods with varying levels of disadvantage throughout the country 
+
+> ...As a result, this study attempts to address the challenges of selective migration present in existing studies on neighborhood outcomes.
+:::
+:::
+
+:::aside
+@hamad2020
+:::
+
+##
+::: columns
+::: {.column width="55%"}
+![](images/hamad-2020-results.png){fig-align="center" width="100%"}
+:::
+
+::: {.column width="45%"}
+<br>
+
+> ...refugees who were assigned to more disadvantaged neighborhoods were more likely to develop hypertension, hyperlipidemia, diabetes, and MI in subsequent decades. 
+
+> Effect sizes were small, representing a 2% increase from baseline rates for each condition...
+
+:::
+:::
+
+:::aside
+@hamad2020
 :::
 
 ## 
@@ -536,7 +678,7 @@ See also @hong2008; @cerda2010; @glymour2010; @hubbard2010; @subramanian2010
 @galster2017; See also @chyn2023 for a very recent review
 :::
 
-## What about community RCTs?
+## Community RCTs are (often) MLMs!
 
 ::: columns
 ::: {.column width="45%"}
@@ -552,43 +694,20 @@ See also @hong2008; @cerda2010; @glymour2010; @hubbard2010; @subramanian2010
 @south2023; @moyer2019
 :::
 
-
-## Grappling with intersectional identities
-::: columns
-::: {.column width="60%"}
-- Health inequalities generated by interlocking systems of power and oppression.
-
-- But often studied by single axes of:
-  - Race, ethnicity, gender, sexual orientation, age, disability status, socioeconomic position, geography
-  - Inattention to joint effects
-  
-- Inadequate data systems
-:::
-
-::: {.column width="40%"}
-![](images/cultureamp.png)
-:::
-
-:::
-
-::: aside
-Image credit: [Culture Amp](https://www.cultureamp.com/blog/why-intersectionality-matters)
-:::
-
-
 ## New approaches to measurement
 
 ::: columns
 ::: {.column width="60%"}
 - Multilevel analysis of individual heterogeneity and discriminatory accuracy (MAIHDA)
-- Partial pooling of (intersectoral) social strata
+- Individuals nested within social strata
+- Partial pooling of intersectoral identities
 - Can reveal heterogeneity beyond simple additive effects. 
 
-$y_{ij} = \beta \gamma_{j} + \mu_{0j} + e_{0ij}$  
+$$y_{ij} = \beta \gamma_{j} + \mu_{0j} + e_{0ij}$$  
 
-$[\mu_{0j}] \sim N(0, \sigma^{2}_{strata})$]  
+$$[\mu_{0j}] \sim N(0, \sigma^{2}_{strata})]$$  
 
-$[\mu_{0j}] \sim N(0, \sigma^{2}_{strata})$]
+$$[e_{0ij}] \sim N(0, \sigma^{2}_{e_{0}})$$
 
 :::
 
