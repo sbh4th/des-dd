@@ -54,7 +54,7 @@ Image credits: @subramanian2003b and  https://bookdown.org/steve_midway/DAR/rand
 
 ::: columns
 ::: {.column width="65%"}
--   Multilevel methods developed in 1980s in demography (Entwistle), statistics (Wong/Mason), education (Bryk/Raudenbush).
+-   Multilevel models developed in 1980s in demography (Entwistle), statistics (Wong/Mason), education (Bryk/Raudenbush).
 -   Use depends critically on theory.
 
 ::: {style="font-size: larger;"}
