@@ -1,0 +1,471 @@
+[
+  {
+    "objectID": "des-dd.html#section",
+    "href": "des-dd.html#section",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "",
+    "text": "“Methods to Study Social Inequality in Health”"
+  },
+  {
+    "objectID": "des-dd.html#outline",
+    "href": "des-dd.html#outline",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Outline",
+    "text": "Outline\n\n1. Asking Questions\n\n2. Basics of DD\n\n3. DD for Inequalities\n\n4. Extensions"
+  },
+  {
+    "objectID": "des-dd.html#what-are-methods-in-social-epidemiology",
+    "href": "des-dd.html#what-are-methods-in-social-epidemiology",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "What are “Methods” in Social Epidemiology?",
+    "text": "What are “Methods” in Social Epidemiology?\n\n\n\n\nExistence of social differences in health (Descriptive)\n\nCauses of observed social differences in health (Etiologic)\n\nOverall effect of social group categories (total “effects”)\nDirect/Indirect effects (causal mediation)\n\nPolicies to address causes and/or remediate social differences in health. (Policy/Intervention)"
+  },
+  {
+    "objectID": "des-dd.html#where-is-the-evidence",
+    "href": "des-dd.html#where-is-the-evidence",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Where is the evidence?",
+    "text": "Where is the evidence?\n\n\n\n\nIt is clear that evidence on the effectiveness and cost-effectiveness of public health interventions is often missing. Sometimes this is because policies are insufficiently subjected to outcome evaluation, perhaps because it is assumed that they are mostly beneficial and any positive outcomes can be taken as read.\n\n\n\n\nThere is, for example, a wealth of aetiological evidence…However, it often appears to be difficult to translate this information into new interventions and even when the interventions are implemented, their evaluation is often problematic.\n\n\n\n\nPetticrew (2007) on “Plugging gaps in the evidence base on health inequalities”."
+  },
+  {
+    "objectID": "des-dd.html#can-interventions-make-things-worse",
+    "href": "des-dd.html#can-interventions-make-things-worse",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Can interventions make things worse?",
+    "text": "Can interventions make things worse?\n\n\n\n\n…a large part of the literature is descriptive rather than analytical.\n\n\n\nWe found no support for the notion that the methods used to reduce smoking decrease inequalities in health between educational groups.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVilhelmsson and Östergren (2018)"
+  },
+  {
+    "objectID": "des-dd.html#causal-questions",
+    "href": "des-dd.html#causal-questions",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Causal questions",
+    "text": "Causal questions\n\n\nWe want to know:\n\nDid the program work? If so,for whom? If not, why not?\nIf we implement the program elsewhere, should we expect the same result?\nDid it decrease inequalities?\n\n\n\n\n\n\n\nImage credit: https://bit.ly/3ApemFr\n\n\n\n\n\nThese questions involve counterfactuals about what would happen if we intervened to do something.\nThese are causal questions."
+  },
+  {
+    "objectID": "des-dd.html#causation-association-and-confounding",
+    "href": "des-dd.html#causation-association-and-confounding",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Causation, Association, and Confounding",
+    "text": "Causation, Association, and Confounding\n\nCausal effect: Do individuals randomly assigned to treatment have better outcomes? \\[E[Y|SET(T=1)] - E[Y|SET(T=0)]\\]\n\nAssociation: Do treated individuals have better outcomes? \\[E[Y|T=1] - E[Y|T=0]\\]\n\n\nConfounding: \\[E[Y|SET(T=1)] - E[Y|SET(T=0)] \\neq E[Y|T=1] - E[Y|T=0]\\]"
+  },
+  {
+    "objectID": "des-dd.html#consequences-of-non-randomized-treatment",
+    "href": "des-dd.html#consequences-of-non-randomized-treatment",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Consequences of non-randomized treatment",
+    "text": "Consequences of non-randomized treatment\n\n\n\nIf we aren’t controlling treatment assignment, who is?\nPolicy programs rarely select people to treat at random.\n\nTargeting those most likely to benefit.\n\nPrograms implemented in response to events.\n\nState taxes (or subsidies) for certain goods.\n\nPeople do not choose to participate in programs at random.\n\nWelfare programs, health screening programs, etc.\nPeople who believe they are likely to benefit from the program.\n\n\n\n\n\n\n\nImage credit: Gowtham AGM on Unsplash"
+  },
+  {
+    "objectID": "des-dd.html#thinking-about-research-design",
+    "href": "des-dd.html#thinking-about-research-design",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Thinking about research design",
+    "text": "Thinking about research design\n\n\n\n\n\n\n\n\n\n\n\n\nWithout randomization \\((Z)\\), we focus on exploiting:\n\nTreated group with change in exposure.\nComparison group without change.\n\nRecall the potential outcomes framework. We need a substitute population (treated and controls):\n\\[E[Y^{1}-Y^{0}]=E[Y^{1}|T=1]-E[Y^{0}|T=0]\\]\n\nWhere should we get our counterfactual?"
+  },
+  {
+    "objectID": "des-dd.html#one-group-posttest-design-with-control-group",
+    "href": "des-dd.html#one-group-posttest-design-with-control-group",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "One-group posttest design with control group",
+    "text": "One-group posttest design with control group"
+  },
+  {
+    "objectID": "des-dd.html#one-group-pretest-posttest-design",
+    "href": "des-dd.html#one-group-pretest-posttest-design",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "One-group pretest-posttest design",
+    "text": "One-group pretest-posttest design"
+  },
+  {
+    "objectID": "des-dd.html#one-group-pretest-posttest-design-1",
+    "href": "des-dd.html#one-group-pretest-posttest-design-1",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "One-group pretest-posttest design",
+    "text": "One-group pretest-posttest design\n\nEven a single pretest observation provides some improvement over the posttest only design.\nNow we derive a counterfactual prediction from the same group before the intervention.\nProvides weak counterfactual evidence about what would have happened in the absence of the program.\n\nWe know that \\(Y_{t-1}\\) occurs before \\(Y_{t}\\) (correct temporal ordering).\nCould be many other reasons apart from the intervention that \\(Y_{t}\\neq Y_{t-1}\\).\n\nStronger evidence if the outcomes can be reliably predicted and the pre-post interval is short.\nBetter still to add a pretest and posttest from a control group."
+  },
+  {
+    "objectID": "des-dd.html#adding-pretests-for-both-groups",
+    "href": "des-dd.html#adding-pretests-for-both-groups",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Adding pretests for both groups",
+    "text": "Adding pretests for both groups"
+  },
+  {
+    "objectID": "des-dd.html#how-does-this-help",
+    "href": "des-dd.html#how-does-this-help",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "How does this help?",
+    "text": "How does this help?\n\nPre/post in control helps resolve this by differencing out any time-invariant characteristics of both groups.\n\nMany observed factors don’t change over the course of an intervention (e.g., geography, parents’ social class, birth cohort).\nAny time-invariant unobserved factors also won’t change over intervention period.\nWe can therefore effectively control for them.\n\nMeasuring same units before and after a program cancels out any effect of all of the characteristics that are unique to that observation and that do not change over time.\nThis also has the benefit of canceling out (or controlling for) unobserved time-invariant characteristics."
+  },
+  {
+    "objectID": "des-dd.html#the-need-for-a-control-group",
+    "href": "des-dd.html#the-need-for-a-control-group",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "The need for a control group",
+    "text": "The need for a control group"
+  },
+  {
+    "objectID": "des-dd.html#what-if-there-were-no-intervention",
+    "href": "des-dd.html#what-if-there-were-no-intervention",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "What if there were no intervention?",
+    "text": "What if there were no intervention?"
+  },
+  {
+    "objectID": "des-dd.html#what-if-there-were-no-intervention-1",
+    "href": "des-dd.html#what-if-there-were-no-intervention-1",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "What if there were no intervention?",
+    "text": "What if there were no intervention?"
+  },
+  {
+    "objectID": "des-dd.html#what-if-there-were-no-intervention-2",
+    "href": "des-dd.html#what-if-there-were-no-intervention-2",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "What if there were no intervention?",
+    "text": "What if there were no intervention?"
+  },
+  {
+    "objectID": "des-dd.html#what-if-things-worsened-over-time",
+    "href": "des-dd.html#what-if-things-worsened-over-time",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "What if things worsened over time?",
+    "text": "What if things worsened over time?"
+  },
+  {
+    "objectID": "des-dd.html#what-if-things-worsened-over-time-1",
+    "href": "des-dd.html#what-if-things-worsened-over-time-1",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "What if things worsened over time?",
+    "text": "What if things worsened over time?"
+  },
+  {
+    "objectID": "des-dd.html#more-time-periods-make-better-evaluations",
+    "href": "des-dd.html#more-time-periods-make-better-evaluations",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "More time periods make better evaluations",
+    "text": "More time periods make better evaluations"
+  },
+  {
+    "objectID": "des-dd.html#parallel-pre-trends-increase-exchangeability",
+    "href": "des-dd.html#parallel-pre-trends-increase-exchangeability",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Parallel pre-trends increase “exchangeability”",
+    "text": "Parallel pre-trends increase “exchangeability”"
+  },
+  {
+    "objectID": "des-dd.html#difference-in-differences-basic-idea",
+    "href": "des-dd.html#difference-in-differences-basic-idea",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Difference-in-Differences: Basic Idea",
+    "text": "Difference-in-Differences: Basic Idea\n\n\n\n\n\n\n\n\n\n\n\n\nThe simplest DD setting:\n\nOutcomes observed for “units” observed in one of two groups:\n\nTreated\nControl\n\nOutcomes observed in one of two time periods:\n\nBefore intervention\nAfter intervention.\n\nTreated: only units in one of the two groups are exposed to a treatment, in the second time period.\nControl: Never observed to be exposed to the treatment."
+  },
+  {
+    "objectID": "des-dd.html#difference-in-differences-basic-idea-1",
+    "href": "des-dd.html#difference-in-differences-basic-idea-1",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Difference-in-Differences: Basic Idea",
+    "text": "Difference-in-Differences: Basic Idea\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe average change over time in the non-exposed (control) group is subtracted from the change over time in the exposed (treatment) group.\nDouble differencing removes biases in second period comparisons between the treatment and control group that could result from:\n\nFixed (i.e., non time-varying) differences between those groups.\nComparisons over time in the treatment group that could be the result of time trends unrelated to the treatment."
+  },
+  {
+    "objectID": "des-dd.html#key-assumption-parallel-trends",
+    "href": "des-dd.html#key-assumption-parallel-trends",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Key Assumption: Parallel Trends",
+    "text": "Key Assumption: Parallel Trends\n\n\n\n\n\n\n\n\n\n\n\n\n\nBasic DD controls for any time invariant characteristics of both treated and control groups.\nDoes not control for any time-varying characteristics.\nIf another policy/intervention occurs in the treated (or control) group at the same time as the intervention, we cannot cleanly identify the effect of the program.\nDD main assumption: in the absence of the intervention treated and control groups would have displayed similar trends.\nThis is called the parallel trends assumption.\n\n\n\n\nImpossible to verify, see Gertler et al. (2016)."
+  },
+  {
+    "objectID": "des-dd.html#section-1",
+    "href": "des-dd.html#section-1",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "",
+    "text": "Classic epidemiology example: Water and cholera\n\n\n\n\n\n\n\n\n\n\n\n\n\nSee Snow (1855) reprinted as Snow et al. (1936)"
+  },
+  {
+    "objectID": "des-dd.html#snows-method",
+    "href": "des-dd.html#snows-method",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Snow’s method",
+    "text": "Snow’s method\n\n\n\nCouldn’t randomize.\nLambeth moved intake upstream of London after 1849.\nSV similar to Lambeth, but did not move.\nSV as ‘unaffected’ control.\nDid not estimate DD parameter, but idea was there.\n\n\n\n\n\n\n\n\n\nRegion\nRate (1849)\nRate (1854)\nPost-Pre\n\n\n\n\nLambeth (treated)\n130.1\n84.9\n-45.2\n\n\nSouthwark + Vauxhall (control)\n134.9\n146.6\n11.7\n\n\nGroup Diff (treat - control)\n-4.8\n-61.7\n???"
+  },
+  {
+    "objectID": "des-dd.html#why-is-snows-work-compelling",
+    "href": "des-dd.html#why-is-snows-work-compelling",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Why is Snow’s work compelling?",
+    "text": "Why is Snow’s work compelling?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEvidence of pre-treatment equivalence between groups:\n\n\n“In many cases a single house has a supply different from that on either side. Each company supplies both rich and poor, both large houses and small; there is no difference either in the condition or occupation of the persons receiving the water of the different companies…”\n\n\nNo knowledge of mechanisms or intervention:\n\n\n“divided into two groups without their choice, and, in most cases, without their knowledge”\n\n\n\n\nSee Snow (1855) reprinted as Snow et al. (1936) and also Freedman (1991)"
+  },
+  {
+    "objectID": "des-dd.html#difference-in-differences-without-regression",
+    "href": "des-dd.html#difference-in-differences-without-regression",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Difference-in-Differences without Regression",
+    "text": "Difference-in-Differences without Regression\nDD (can be) just differences in means. \n\n\nLet \\(\\mu_{it}=E(Y_{it})\\)\n\n\\(i=0\\) is control, \\(i=1\\) treated.\n\\(t=0\\) is pre, \\(t=1\\) is post.\nOne ‘difference’ is pre-post in treated: \\(\\mu_{11}-\\mu_{10}\\)\nSecond ‘difference’ is pre-post in control: \\(\\mu_{01}-\\mu_{00}\\)\nDifferences-in-Differences: \\((\\mu_{11}-\\mu_{10})-(\\mu_{01}-\\mu_{00})\\)\n\n\nSnow’s Example:\n\n\n\nArea\nPre\nPost\nDifference\n\n\n\n\nTreated\n130\n85\n-45\n\n\nControl\n135\n147\n12\n\n\nT - C\n-5\n-62\n-57"
+  },
+  {
+    "objectID": "des-dd.html#dd-regression-two-groups-two-periods-2x2",
+    "href": "des-dd.html#dd-regression-two-groups-two-periods-2x2",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "DD Regression: Two Groups, Two Periods (2x2)",
+    "text": "DD Regression: Two Groups, Two Periods (2x2)\n\n\n Single treated and control group, two periods:\n\n\\(\\beta_{1}\\) = Treated group\n\\(\\beta_{2}\\) = Post period\n\\(\\beta_{3}\\) = Product term\n\n\n\n\n\n\n\n\n\n\n\n\\[Y = \\color{blue}{\\beta_{0} + \\beta_{1}*treat} + \\color{red}{\\beta_{2}*post} +   \\color{green}{\\beta_{3}*treat*post}\\]"
+  },
+  {
+    "objectID": "des-dd.html#section-2",
+    "href": "des-dd.html#section-2",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "",
+    "text": "\\[Y=\\beta_{0}+\\beta_{1}Treat+\\beta_{2}Post+\\beta_{3}Treat*Post+\\varepsilon_{t}\\]"
+  },
+  {
+    "objectID": "des-dd.html#difference-in-differences-estimates-the-att",
+    "href": "des-dd.html#difference-in-differences-estimates-the-att",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Difference-in-differences estimates the ATT",
+    "text": "Difference-in-differences estimates the ATT\nFocus on treated group due to selection\n\nOur DD model is: \\(Y=\\beta_{0}+\\beta_{1}Treat+\\beta_{2}Post+\\beta_{3}Treat*Post+\\varepsilon\\).\nIn the (possibly counterfactual) absence of intervention, the expected outcome is:\n\n\\(E\\left(Y_{i}^{0}|T=1,A=0\\right)=\\beta_{1}+\\beta_{2}\\)\n\nIn the (possibly counterfactual) presence of intervention, the expected outcome is:\n\n\\(E\\left(Y_{i}^{1}|T=1,A=1\\right)=\\beta_{1}+\\beta_{2}+\\beta_{3}\\)\n\nATT is the expected difference in \\(Y_{i}^{1}-Y_{i}^{0}\\) for those treated in the post-period:\n\n\\(ATT=E\\left(Y^{1}-Y^{0}|T=1\\right)=\\beta_{3}\\)"
+  },
+  {
+    "objectID": "des-dd.html#back-to-snows-water-pump",
+    "href": "des-dd.html#back-to-snows-water-pump",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Back to Snow’s water pump",
+    "text": "Back to Snow’s water pump\n\n\nHow to estimate the impact?\n\n\\(Treat=1\\) if Lambeth, 0 if SW\n\\(Post=1\\) if 1854, 0 if 1849\n\\(Treat*Post=1\\) if Lambeth in 1854, 0 otherwise.\n\n\n\n\n\\(Y=\\beta_{0}+\\beta_{1}Treat+\\beta_{2}Post+\\beta_{3}Treat*Post+\\varepsilon\\)\n\n\n\nProvince, Time\nEstimate\nTime Diff\nDD\n\n\n\n\nSW, 1849\n\\(\\beta_{0}\\)\n\n\n\n\n\n\n\\(\\beta_{2}\\)\n\n\n\nSW, 1854\n\\(\\beta_{0} + \\beta_{2}\\)\n\n\n\n\n\n\n\n\\(\\beta_{3}\\)\n\n\nLambeth, 1849\n\\(\\beta_{0} + \\beta_{1}\\)\n\n\n\n\n\n\n\\(\\beta_{2} + \\beta_{3}\\)\n\n\n\nLambeth, 1854\n\\(\\beta_{0} + \\beta_{1} + \\beta_{2} + \\beta_{3}\\)"
+  },
+  {
+    "objectID": "des-dd.html#reformulation-of-the-model-using-fixed-effects",
+    "href": "des-dd.html#reformulation-of-the-model-using-fixed-effects",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Reformulation of the model using ‘fixed effects’",
+    "text": "Reformulation of the model using ‘fixed effects’\n\n\nExpress our earlier model using ‘fixed effects’:\n\nDummy for Group\nDummy for Time\nTime-varying policy indicator\n\n\n\n\n\\[Y = \\color{blue}{\\beta_{0} + \\beta_{1}*Group2} + \\color{red}{\\beta_{2}*Time2} +   \\color{green}{\\beta_{3}*policy}\\]\n\n\n\n\n\n\n\n\n\n\\(\\color{green}{\\beta_{3}}\\) still estimates the ‘difference-in-differences’ parameter."
+  },
+  {
+    "objectID": "des-dd.html#section-3",
+    "href": "des-dd.html#section-3",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "",
+    "text": "What about multiple treated groups?\n\nEasy to rewrite our earlier model for multiple groups treated at the same time.\n3 units and 3 time periods.\nGroups 1 and 3 implement policy at T2.\ng2 and g3 are dummies for group 2 and 3\nt2 and t3 are respective time dummies for periods 2 and 3.\n\n\n\n\n\n\n\ny\ngroup\ntime\npolicy\ng2\ng3\nt2\nt3\n\n\n\n\n.\n1\n1\n0\n0\n0\n0\n0\n\n\n.\n1\n2\n1\n0\n0\n1\n0\n\n\n.\n1\n3\n1\n0\n0\n0\n1\n\n\n.\n2\n1\n0\n1\n0\n0\n0\n\n\n.\n2\n2\n0\n1\n0\n1\n0\n\n\n.\n2\n3\n0\n1\n0\n0\n1\n\n\n.\n3\n1\n0\n0\n1\n0\n0\n\n\n.\n3\n2\n1\n0\n1\n1\n0\n\n\n.\n3\n3\n1\n0\n1\n0\n1"
+  },
+  {
+    "objectID": "des-dd.html#extending-the-model-to-multiple-groupstimes",
+    "href": "des-dd.html#extending-the-model-to-multiple-groupstimes",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Extending the model to multiple groups/times",
+    "text": "Extending the model to multiple groups/times\n\nThe regression model with group and time fixed effects would now look something like this (where \\(\\color{red}{\\beta_{5}}\\) is the DD estimate where policy=1 vs. 0):\n\n\\[Y_{gt}=\\beta_{0}+\\beta_{1}g2+\\beta_{2}g3+\\beta_{3}t2+\\beta_{4}t3+\\color{red}{\\beta_{5}}\\color{black}{p_{gt}}+\\varepsilon_{st}\\]\n\nReference categories (for interpreting \\(\\beta_{0}\\)) are group 1 \\((g1)\\) and time 1 \\((t1)\\).\n\n\n\nMore generally, you could write the basic equation with multiple group \\((\\gamma_{g})\\) and time \\((\\tau_{t})\\) fixed effects as:\n\n\\[Y_{gt}=\\alpha + \\gamma_{g} + \\tau_{t} + \\color{red}{\\delta^{DD}} \\color{black}{p_{gt}}+\\varepsilon_{st}\\] where \\(\\color{red}{\\delta^{DD}}\\) is the difference-in-differences estimate for groups treated at time t."
+  },
+  {
+    "objectID": "des-dd.html#evaluating-impact-on-inequalities",
+    "href": "des-dd.html#evaluating-impact-on-inequalities",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Evaluating impact on inequalities",
+    "text": "Evaluating impact on inequalities\n\n\n\n\n\n\n\n\n\n\nEvaluated impact of MA reform on inequalities in hospital admissions.\nCompared MA to nearby states: NY, NJ, PA.\nIntervention “worked”: % uninsured halved (12% to 6%) from 2004-06 to 2008-09.\n\n\n\nMcCormick et al. (2015)"
+  },
+  {
+    "objectID": "des-dd.html#section-4",
+    "href": "des-dd.html#section-4",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "",
+    "text": "We want credible counterfactuals\n\nStrong visual evidence that pre-intervention trends similar in treated and control groups.\nAdds credibility to assumption that post-intervention trends would have been similar in the absence of the intervention.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMcCormick et al. (2015)"
+  },
+  {
+    "objectID": "des-dd.html#section-5",
+    "href": "des-dd.html#section-5",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "",
+    "text": "Little evidence of differential impact of health reform on racial/ethnic differences in hospital admissions\n\n\n\n\n\n\n\n\n\n\n\nMcCormick et al. (2015)"
+  },
+  {
+    "objectID": "des-dd.html#what-was-the-english-strategy",
+    "href": "des-dd.html#what-was-the-english-strategy",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "What was the English “strategy”?",
+    "text": "What was the English “strategy”?\n\n\n\n\n\nNational policies in 1999\nTackling low income, family support policies, tax-reduction and long-term care for the elderly, anti-smoking policies, improving early education\n\nNational policies in 2003\nReducing poor health behaviors in manual social groups, improving housing quality, and reducing accidents at home and on the road.\n\n\n\nHu et al. (2016)"
+  },
+  {
+    "objectID": "des-dd.html#section-7",
+    "href": "des-dd.html#section-7",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "",
+    "text": "These policies showed little evidence for inequality reduction in England …\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n…even if there is no more reduction in health inequalities after the implementation of the strategy than before, the changes in trends in England could still be more favourable than those in other European countries that have done less to reduce health inequalities. -Hu et al. (2016)\n\n\n\n\n\nMackenbach (2010)"
+  },
+  {
+    "objectID": "des-dd.html#section-8",
+    "href": "des-dd.html#section-8",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "",
+    "text": "Data on self-reported health, smoking, obesity\n\n\n\n\n\n\n\n\n\n\n\n\n\nFor comparison we selected countries that were in a similar stage of awareness of health inequalities, but that had not implemented a national strategy to tackle health inequalities.\n\n\nTreatment: 2000s vs. 1990s\nComparison: England vs. Others\nSEP: Low vs. High Education\n\n\n\n\n\nHu et al. (2016)"
+  },
+  {
+    "objectID": "des-dd.html#section-9",
+    "href": "des-dd.html#section-9",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "",
+    "text": "In the last and our main step, we added each of the comparison countries separately to the analysis of the English data, following the idea of “difference-in-differences analysis”. Our aim was to investigate whether the changes in trends in health inequalities between 1990–2000 and 2000–2010 were more favourable in England than those in the three comparison countries.\n\n\n\nRegression-based approach:\n\n\n\n\n\n\n\n\n\n\n\n\n\nHu et al. (2016)"
+  },
+  {
+    "objectID": "des-dd.html#our-basic-setup-was-for-group-averages",
+    "href": "des-dd.html#our-basic-setup-was-for-group-averages",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Our basic setup was for group averages",
+    "text": "Our basic setup was for group averages"
+  },
+  {
+    "objectID": "des-dd.html#lets-add-two-social-groups-per-unit",
+    "href": "des-dd.html#lets-add-two-social-groups-per-unit",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Let’s add two social groups per unit",
+    "text": "Let’s add two social groups per unit"
+  },
+  {
+    "objectID": "des-dd.html#section-10",
+    "href": "des-dd.html#section-10",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "",
+    "text": "\\(Y=\\beta_{0}+\\beta_{1}Treat+\\beta_{2}Post+\\beta_{3}Treat*Post+\\beta_{4}High\\)"
+  },
+  {
+    "objectID": "des-dd.html#section-11",
+    "href": "des-dd.html#section-11",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "",
+    "text": "\\(Y=\\beta_{0}+\\beta_{1}Treat+\\beta_{2}Post+\\beta_{3}Treat*Post+\\beta_{4}High\\)"
+  },
+  {
+    "objectID": "des-dd.html#allowing-for-sep-group-heterogeneity",
+    "href": "des-dd.html#allowing-for-sep-group-heterogeneity",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Allowing for SEP-group heterogeneity",
+    "text": "Allowing for SEP-group heterogeneity\n\n\n\n\nSocioeconomic differences may be different magnitude in treated vs. control areas.\nBetter resources, more advocacy, different demographics, etc."
+  },
+  {
+    "objectID": "des-dd.html#section-12",
+    "href": "des-dd.html#section-12",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "",
+    "text": "\\({\\scriptstyle Y=\\beta_{0}+\\beta_{1}Treat+\\beta_{2}Post+\\beta_{3}Treat*Post+\\beta_{4}High + \\color{blue}{\\beta_{5}Treat*High}}\\)"
+  },
+  {
+    "objectID": "des-dd.html#allowing-for-sep-time-heterogeneity",
+    "href": "des-dd.html#allowing-for-sep-time-heterogeneity",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Allowing for SEP-time heterogeneity",
+    "text": "Allowing for SEP-time heterogeneity\n\n\n\n\nSecular trends may be changing differentially by social group in all areas.\nDifferent baseline health, health behaviors, access to resources, etc."
+  },
+  {
+    "objectID": "des-dd.html#section-13",
+    "href": "des-dd.html#section-13",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "",
+    "text": "\\({\\scriptstyle Y=\\beta_{0}+\\beta_{1}Treat+\\beta_{2}Post+\\beta_{3}Treat*Post+\\beta_{4}High + \\beta_{5}Treat*High + \\color{blue}{\\beta_{6}Post*High}}\\)"
+  },
+  {
+    "objectID": "des-dd.html#section-14",
+    "href": "des-dd.html#section-14",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "",
+    "text": "\\({\\scriptstyle Y=\\beta_{0}+\\beta_{1}Treat+\\beta_{2}Post+\\beta_{3}Treat*Post+\\beta_{4}High + \\beta_{5}Treat*High + \\beta_{6}Post*High + \\color{green}{\\beta_{7}Treat*Post*High}}\\)"
+  },
+  {
+    "objectID": "des-dd.html#section-15",
+    "href": "des-dd.html#section-15",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "",
+    "text": "Results showed that changes in trends of inequalities after 2000 were not statistically significantly different between England and any of the other countries, with the single exception of obesity for which the change was less favourable in England than in Italy (OR = 1.64, p &lt; 0.05)."
+  },
+  {
+    "objectID": "des-dd.html#section-16",
+    "href": "des-dd.html#section-16",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "",
+    "text": "The interpretation of the interaction terms in difference-in-differences logistic models is essentially similar to that in the more common linear models, except that they indicate the relative change of the odds of the health outcome in the treatment group relative to that in the control group, instead of the absolute change of the rate of the health outcome in the treatment group minus that in the control group"
+  },
+  {
+    "objectID": "des-dd.html#section-17",
+    "href": "des-dd.html#section-17",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "",
+    "text": "Parallel trends assumption is scale dependent.\nCan’t have it both ways.\n\n\n\nDifferences in levels \n\n\n\nDifferences in logs \n\n\n\n\nFigure from Rosenbaum (2017); see also Roth and Sant’Anna (2023)"
+  },
+  {
+    "objectID": "des-dd.html#implications-for-counterfactuals",
+    "href": "des-dd.html#implications-for-counterfactuals",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Implications for counterfactuals",
+    "text": "Implications for counterfactuals\nThe change in the treated group in both graphs is identical (from 1.4 to 2.5).\n\n\n\n\n\n\n\n\n\n\n\nParallel trends in levels (\\(\\Delta 0.8\\)) consistent with positive impact of treatment.\n\n\n\n\n\n\n\n\n\n\nParallel trends in logs (\\(\\times 1.3\\)) consistent with negative impact of treatment."
+  },
+  {
+    "objectID": "des-dd.html#extending-the-basic-2x2-dd",
+    "href": "des-dd.html#extending-the-basic-2x2-dd",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Extending the basic 2x2 DD",
+    "text": "Extending the basic 2x2 DD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote that our basic regression model assumes the only time-varying factor is the policy: \\[Y_{gt}=\\alpha + \\gamma_{g} + \\tau_{t} + \\color{red}{\\delta^{DD}} \\color{black}{p_{gt}} + \\varepsilon_{gt}\\]\nWhat if there are confounders of the decision to change the policy?\nWe may have omitted important factors that:\n\ndiffer by treatment status.\naffect the outcome.\nare time-varying, but not affected by the treatment \\((TVC)\\).\n\n\n\n\nThe literature on covariates is evolving rapidly. See Caetano et al. (2022) for more details."
+  },
+  {
+    "objectID": "des-dd.html#adding-time-varying-covariates",
+    "href": "des-dd.html#adding-time-varying-covariates",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Adding time-varying covariates",
+    "text": "Adding time-varying covariates\n\nSuppose the policy is a soft drink tax and the outcome calories consumed (linear).\nWe might worry that changes in the density of fast food restaurants could be a common cause of both. Now add measured time-varying confounders:\n\n\\[Y_{gt}=\\alpha + \\gamma_{g} + \\tau_{t} + \\color{red}{\\delta^{DD}} \\color{black}{p_{gt}}+ \\zeta Z_{gt}+\\varepsilon_{gt}\\]\n\nwhere \\(\\zeta Z_{gt}\\) is a vector of other controls at the cluster level.\nImportant especially if you think other policies may have been implemented simultaneously with treatment.\nNow, conditional on FEs and \\(\\zeta Z_{gt}\\), we assume that the timing of the change in policy is as good as random."
+  },
+  {
+    "objectID": "des-dd.html#extensions-to-non-binary-treatments",
+    "href": "des-dd.html#extensions-to-non-binary-treatments",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Extensions to non-binary treatments",
+    "text": "Extensions to non-binary treatments\n\n\nDD design can also handle treatments, policies, or exposures that are not dichotomous.\n\n\nE.g., changes in minimum wage levels (varying “treatment” intensity)\n\nEstimate varying levels of increase ($2 increase vs. $4)\n\n“Sin” taxes (e.g., alcohol or cigarettes).\n\ndifferential changes in excise taxes (smaller vs. larger).\n\n“Weaker” vs. “Stronger” policies\n\ntexting while driving (primary vs. secondary offense)\nthresholds for blood alcohol limits (0.15 vs. 0.10 vs. 0.08)."
+  },
+  {
+    "objectID": "des-dd.html#dynamic-effects",
+    "href": "des-dd.html#dynamic-effects",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "Dynamic Effects",
+    "text": "Dynamic Effects\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBasic DD estimates the average ATT over the entire post-intervention period.\nMay average over important variations in how the treatment evolves over time.\nWas the impact immediate? Transient? Sustained over time?\nCan extend the basic model to allow for heterogeneity over time.\n\n\n\n\nFigure from Baker et al. (2022)"
+  },
+  {
+    "objectID": "des-dd.html#section-18",
+    "href": "des-dd.html#section-18",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "",
+    "text": "Hypothetical dynamic treatment effect scenarios"
+  },
+  {
+    "objectID": "des-dd.html#what-about-staggered-treatments",
+    "href": "des-dd.html#what-about-staggered-treatments",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "What about staggered treatments?",
+    "text": "What about staggered treatments?\n\n\n\nDifferent groups adopt treatments at different times.\nCreates many 2x2 DDs.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure from Nandi et al. (2016)"
+  },
+  {
+    "objectID": "des-dd.html#section-19",
+    "href": "des-dd.html#section-19",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "",
+    "text": "Early-adopters (k) vs. never treated (U)\nLater-adopters (l) vs. never treated (U).\nEarly (k) vs. later (l) adopters.\nLater (l) vs. earlier (k) adopters.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGraph from https://andrewcbaker.netlify.app/2019/09/25/difference-in-differences-methodology/"
+  },
+  {
+    "objectID": "des-dd.html#what-is-the-problem",
+    "href": "des-dd.html#what-is-the-problem",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "What is the problem?",
+    "text": "What is the problem?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUsing earlier treated groups as controls only ‘works’ if the treatment effects are:\n\nHomogeneous across groups at a given time; and\nHomogeneous over time (no dynamic effects).\n\n\n\n\nThis adds any changes in treatment effects in the early group, which get subtracted from the DD estimate.\nCan lead to \\(\\beta^{DD}\\) that is a poor summary of group-specific effects if there is heterogeneity.\n\n\n\n\nFigure from Baker et al. (2022)"
+  },
+  {
+    "objectID": "des-dd.html#what-are-potential-solutions",
+    "href": "des-dd.html#what-are-potential-solutions",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "What are potential solutions?",
+    "text": "What are potential solutions?\n\nAll basically involve not allowing early treated groups to serve as controls later.\n\nCallaway and Sant’Anna\nUse non-parametric group-time ATTs (+ covariates).\nAbraham and Sun\nUse saturated fixed effects to ensure that prior treated units are not used as controls\nCengiz, Dube, Lindner, and Zipperer\nCreate state-event-specific panel datasets and calculate event-specific estimates using separate regressions for each state-event.\n\n\nMany new papers on this, including Callaway and Sant’Anna (2021), Goodman-Bacon (2021), Cengiz et al. (2019) Sun and Abraham (2021)."
+  },
+  {
+    "objectID": "des-dd.html#section-20",
+    "href": "des-dd.html#section-20",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "",
+    "text": "Key Takeaways\n\n\nDD compares changes in outcomes in a treated group to a control group.\nControls for time-invariant unobserved group factors and common trends in outcomes.\nRequires good qualitative knowledge about why the treated group became treated.\nCore assumption is parallel trends, unverifiable but not impossible to investigate.\nCan be extended to address inequalities, but stronger assumptions needed.\nStrong designs like DD can help reduce the “evidence gap”."
+  },
+  {
+    "objectID": "des-dd.html#references",
+    "href": "des-dd.html#references",
+    "title": "Difference-in-Differences for Social Epidemiology",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\n\n\nBaker, A.C., Larcker, D.F., Wang, C.C.Y., 2022. Journal of Financial Economics 144, 370–395.\n\n\nCaetano, C., Callaway, B., Payne, S., Rodrigues, H.S., 2022. Difference in Differences with Time-Varying Covariates.\n\n\nCallaway, B., Sant’Anna, P.H.C., 2021. Journal of Econometrics, Themed Issue: Treatment Effect 1 225, 200–230.\n\n\nCengiz, D., Dube, A., Lindner, A., Zipperer, B., 2019. The Quarterly Journal of Economics 134, 1405–1454.\n\n\nFreedman, D.A., 1991. Sociological Methodology 21, 291.\n\n\nGertler, P.J., Martinez, S., Premand, P., Rawlings, L.B., Vermeersch, C.M., 2016. Impact evaluation in practice. World Bank Publications.\n\n\nGoodman-Bacon, A., 2021. Journal of Econometrics, Themed Issue: Treatment Effect 1 225, 254–277.\n\n\nHu, Y., van Lenthe, F.J., Judge, K., Lahelma, E., Costa, G., de Gelder, R., Mackenbach, J.P., 2016. BMC Public Health 16, 865.\n\n\nMackenbach, J.P., 2010. Social Science & Medicine 71, 1249–1253.\n\n\nMcCormick, D., Hanchate, A.D., Lasser, K.E., Manze, M.G., Lin, M., Chu, C., Kressin, N.R., 2015. BMJ 350, h1480–h1480.\n\n\nNandi, A., Hajizadeh, M., Harper, S., Koski, A., Strumpf, E.C., Heymann, J., 2016. PLoS Med 13, e1001985.\n\n\nPetticrew, M., 2007. The European Journal of Public Health 17, 411–413.\n\n\nRosenbaum, P.R., 2017. Observation and experiment: An introduction to causal inference. Harvard university press, Cambridge, Massachusetts.\n\n\nRoth, J., Sant’Anna, P.H.C., 2023. Econometrica 91, 737–747.\n\n\nSnow, J., Frost, W.H., Richardson, B.W., 1936. Snow on cholera: Being a reprint of two papers. Commonwealth Fund, New York.\n\n\nSun, L., Abraham, S., 2021. Journal of Econometrics, Themed Issue: Treatment Effect 1 225, 175–199.\n\n\nVilhelmsson, A., Östergren, P.-O., 2018. PLOS ONE 13, e0195774."
+  }
+]
