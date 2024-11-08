@@ -1,2 +1,2 @@
 # des
-Materials for talk at Danish Epidemiology Society 2024
+Materials for pre-meeting Workshop on Difference-in-Differences at the Danish Epidemiology Society 2024
