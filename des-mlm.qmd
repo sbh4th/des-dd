@@ -24,6 +24,7 @@ csl: elsevier-harvard-without-titles.csl
 filters:
   - parse-latex
 ---
+
 ## 
 ::: columns
 ::: {.column width="40%"}
@@ -412,6 +413,22 @@ Random effects: [Yes!]{.blue} ![](images/subu-hsr-2003.png){width="70%"}
 
 ::: aside
 @mellor2003; @subramanian2003
+:::
+
+##
+::: columns
+::: {.column width="40%"}
+### [Zombie hypothesis...]{.blue}
+![](images/not-dead.png)
+:::
+
+::: {.column width="60%"}
+![](images/dunn-jech.png)
+:::
+:::
+
+::: aside
+@dunn2024
 :::
 
 ## Neighborhood evidence to 2007

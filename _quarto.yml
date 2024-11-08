@@ -1,6 +1,0 @@
-project:
-  type: website
-  output-dir: docs
-  render:
-    - des-dd.qmd
-    - des-mlm.qmd
